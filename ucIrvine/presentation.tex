@@ -4,7 +4,8 @@
 estimates from space-borne radar observations}
 \author{Mircea Grecu}
 \institute{NASA Goddard Space Flight Center and Morgan State University}
-\date{March 2nd,2023}
+\date{March 2,2023}
+%%\date{\today}
 
 \begin{document}
 \frame{\titlepage}
@@ -138,4 +139,72 @@ estimates from space-borne radar observations}
 \end{column}
 \end{columns}
 \end{frame}    
+\begin{frame}
+\frametitle{Ground Clutter}
+\begin{columns}
+\begin{column}{0.55\textwidth}
+    \begin{itemize}
+    \item Ground clutter is strong echo in the radar observation caused 
+    by the ground.
+    \item It can extend up to 2.0 km above the surface and completely 
+    obscure the precipitation echo.
+    \item Nadir observations are minimally affected 
+    and can be used in the development of statistical clutter mitigation 
+    methodologies, e.g.
+    $pRate(z<z_{cf})=pRate(z_{cf}) \times$
+    $pRate_{mean}(z)/pRate_{mean}(z_{cf})$
+    \end{itemize}
+\end{column}
+\begin{column}{0.5\textwidth}
+    \begin{figure}
+        \begin{center}
+        \includegraphics[width=0.9\textwidth]{Figures/fig9.png}
+        \includegraphics[width=0.9\textwidth]{Figures/fig10.png}
+        \end{center}
+    \end{figure}
+\end{column}
+\end{columns}
+\end{frame}
+\begin{frame}
+\frametitle{Impact of Ground Clutter Correction}
+\begin{figure}
+        \begin{center}
+        \includegraphics[width=0.9\textwidth]{Figures/fig11.png}
+        \end{center}
+    \end{figure}
+\end{frame}
+\begin{frame}
+    \frametitle{Light Precipitation}
+    \begin{columns}
+        \begin{column}{0.55\textwidth}
+            \begin{itemize}
+            \item The DPR does not miss all the light precipitation associated with a given point in the Tb-space
+            \item An empirical algorithm may be derived from collocated Tbs and DPR retrievals
+            \item The empirical algorithm is to be applied only when the DPR does not detect precipitation. When estimates are greater than 0, a decision is required.
+                
+            \end{itemize}
+        \end{column}
+        \begin{column}{0.5\textwidth}
+            \begin{figure}
+                \begin{center}
+                \includegraphics[width=0.9\textwidth]{Figures/fig12.png}
+                \includegraphics[width=0.9\textwidth]{Figures/fig13.png}
+                \end{center}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame} 
+\begin{frame}
+    \frametitle{Summary and Conclusions}
+    \begin{itemize}
+        \item Although the most accurate at the instantaneous level, space-borne radar precipitation 
+        estimates affected by multiple types of uncertainties.
+        \item Even when dual frequency observations are available, the 
+        estimation problem is still posed.
+        \item Parameterizations and "a priori" information derived 
+        from ground observations may be used to mitigate the uncertainties.
+        \item However, the process is not trivial and requires a sustained
+        long-term effort.
+    \end{itemize}
+\end{frame}
 \end{document}
