@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{subcaption}
+\usepackage{longtable}
 \author{Mircea Grecu and John E. Yorks}
 \title{Response to Reviewers}
 \date{}
@@ -346,7 +347,7 @@ is estimated, the authors must use a priori assumptions to resolve the ambiguity
 We derive the IWC as a function of CloudSat $Z$ and $N_w$.  The $N_w$ is given by the vertical parameterization and perturbed using the random model
 described above and in the revised manuscript.  We added a sentence in the manuscript to clarify this point.\\
 \newline
-\textit{10. l. 203: I don't think that 200 000 profiles can be considered a large dataset by today's standards.}\\
+\textit{10. l. 203: I don't think that 200,000 profiles can be considered a large dataset by today's standards.}\\
 \newline
 We agree that 200,000 profiles is not a large dataset by today's standards.  However, these profiles are derived from a month of CloudSat observations.
 Specifically, all CloudSat and 2C-ICE product files from June 2019 were processed, and only profiles with no echo below the freezing level
@@ -369,6 +370,26 @@ Thank you for the suggestion.  We added the lines to the figure.\\
 \newline
 Thank you for pointing this out.  We added the missing word.\\
 \newline
+
+\begin{longtable}[]{@{}llll@{}}
+
+    Instrument & Frequency/Wavelength & Noise & Sensitivity \\
+    \hline
+    \endhead
+    Lidar & 524 nm & LogNormal(0,1) & 1e-6 \\
+    Radar & 13.8 GHz & 0.5dB & 8 dBZ \\
+    Radiometer & 89 GHz & 1.0 K & N/A \\
+    & 183.31+/-0.2 GHz & 1.0 K & N/A \\
+    & 183.31+/-1.1 GHz & 1.0 K & N/A \\
+    & 183.31+/-2.8 GHz & 1.0 K & N/A \\
+    & 183.31+/-4.2 GHz & 1.0 K & N/A \\
+    & 183.31+/-6.8 GHz & 1.0 K & N/A \\
+    & 183.31+/-11 GHz & 1.0 K & N/A \\
+    & 325.15+/-1.5 GHz & 1.0 K & N/A \\
+    & 325.15+/-3.5 GHz & 1.0 K & N/A \\
+    & 183.31+/-9.5 GHz & 1.0 K & N/A \\
+   \hline 
+    \end{longtable}
 
 \begin{thebibliography}{999}
 
