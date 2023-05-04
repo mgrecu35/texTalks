@@ -18,7 +18,8 @@ Oceanic Technology and presents important and exciting results. The authors cons
  a few important ways in which the paper could be strengthened. I recommend 
  publication after the following comments are addressed.}\\
 \newline
- We appreciate \\
+ We thank the reviewer for their perspective and constructive suggestions. Our point by point response is 
+ provided below.\\
 \newline
 \textit{\textbf{Major Comments:} 1) There are several large sources of uncertainty that will be present in real 
 retrievals from AOS that are ignored in this paper. While there is certainly still 
@@ -34,45 +35,125 @@ unlikely to perfectly match reality. Finally, it appears that no measurement
 uncertainty has been assumed. The last paragraph of the paper does briefly mention 
 many of these uncertainties, but they need to be introduced earlier in the 
 manuscript, and more details are needed about the specifics of how IMPACTS
-will help mitigate them.}
-
-2) You say in your abstract (and conclusion) that “the characteristics of 
+will help mitigate them.}\\
+\newline
+We thank the reviewer for the uncertainty discussion. Yes, indeed the resolution of the simulated 
+observations is that of the CloudSat, while the AOS instruments are expected to have different resolutions,
+which might impact results. In the revised manuscript, we included statements to convey this aspect.
+We agree that the assumed electromagnetic scattering properties assumed in the study although
+reasonable may contain significant uncertainties.  We acknowledge this aspect in the revised manuscript 
+as well. Regarding the measurement uncertainties, we account for them in the radar and radiometer simulations,
+but only in a highly idealized way in the lidar simulations.  Specifically, we assume random errors with 0.0 mean
+and 0.5dB standard deviation in the radar observations \cite{takahashi2008}, and a Noise-Equivalent-Delta-T (NEDT)
+of 1K, which is a readily achievable level for modern satellite radiometer \cite{draper2015}. A complex 
+model of space-borne lidar measurement uncertainties was developed in \cite{liu2006}, but its parameters are
+difficult to reliably quantify from theoretical considerations based on instrument expectations alone. Instead, we
+assume a simple multiplicative error model, with the multiplicative factor model as a log-normally distributed random
+variable with 0.0 mean and 1.0 standard deviation, which result in observation uncertainties similar to those in
+the radar observations. We acknowledge the limitations of this model in the manuscript.\\
+\newline
+\textit{2) You say in your abstract (and conclusion) that “the characteristics of 
 the instruments e.g.,  frequencies, sensitivities, etc. are set based on the 
 expected characteristics of the AOS mission.” However, the AOS mission 
 specifications are still very much in flux. Therefore, for reproducibility, 
 I suggest adding a table explicitly laying out the frequencies and 
 sensitivities you assume for each instrument (radar, lidar, radiometer). 
 Some of these (e.g., the radiometer frequencies) are mentioned in the text, 
-but it would be nice to see it all in one place.
-
-Minor Comments
-
-Line 38: Where is 8.0 dBZ coming from? There should be a citation here, or it should be stated that this is an estimate of the radar’s expected sensitivity.
-
-Lines 50-51: While your approach is justifiable and worthwhile, it is worth noting that your CloudSat IWC retrieval also makes numerous assumptions about ice cloud microphysical properties and structures (as laid out in Section 2a). So the problem is not entirely avoided by relying on “observations” instead of models, as the observations were of radar reflectivity, not of ice water contents or particle sizes.
-
-Lines 65-67: This is fine, but it should be noted that in doing this, you are underestimating the true retrieval uncertainty. The particle distribution assumptions and electromagnetic scattering properties that you use in training the retrieval algorithm will almost certainly not perfectly reflect the actual size and shape distributions of ice particles around the globe.
-
-Lines 83-90 and Eq. (1): I looked over the Testud et al. (2001) paper, and could not find anything that directly supported this statement, or any equations that resembled Eq. (1). Please add further explanation, either here or in an appendix, to help the reader follow your logic.
-
-Figure 2: Neither the caption nor the text adequately explains what is being plotted in this figure. What does each individual point represent? The text says, “Figure 2 is a scatter plot representation of the class multiplicative coefficient ai as a function of relative height,” but if that were the case, I would expect there to be many more points on the scatter plot (i.e. 18 classes times a certain number of relative height levels, to yield hundreds of points).
-
-Lines 120-121: How is the data in Fig. 2 used to parameterize Nw as a function of height? Do you fit a line/curve to the data in Fig. 2? This needs to be clarified.
-
-Figure 3: It would be helpful to add vertical lines to these plots to indicate the detection thresholds you are assuming for the radar (8 dBZ?) and lidar.
-
-Line 220: It is my understanding that an ensemble Kalman smoother assumes normal distributions. How much does it matter that IWC is not normally distributed in nature?
-
-Typos
-
-Line 276: “wells” should be “well”
-
-Line 308: Figure 8 should be Figure 9
-
-Line 315: IWP should be IWC
-
-Line 361: eliminate “out
-
+but it would be nice to see it all in one place.}\\
+\newline
+We agree with the reviewer that, unfortunately, the AOS mission is still in flux. We added a table in the revised
+manuscript to summarize the assumed instrument characteristics.\\
+\newline
+\textit{\textbf{Minor Comments}
+Line 38: Where is 8.0 dBZ coming from? There should be a citation here, or it should be stated that this is 
+an estimate of the radar’s expected sensitivity.}\\
+\newline
+This is an estimate of the radar’s expected sensitivity provided by Japan Aerospace Exploration Agency (JAXA), which the AOS International
+partner contributing the Ku-band radar in the inclined orbit.\\
+\newline
+\textit{Lines 50-51: While your approach is justifiable and worthwhile, it is worth noting that your CloudSat IWC retrieval 
+also makes numerous assumptions about ice cloud microphysical properties and structures (as laid out in Section 2a). 
+So the problem is not entirely avoided by relying on “observations” instead of models, as the observations were of 
+radar reflectivity, not of ice water contents or particle sizes.}\\
+\newline
+We agree. We do not consider CloudSat retrievals uncertainties or bias free, but we prefer them because
+they are consistent with an observed vertical distribution of reflectivity at W-band. The vertical distributions of radar reflectivity
+derived from satellite or ground-based observations are generally difficult to reproduce by model simulations. We added a statement 
+to this effect in the revised manuscript.\\
+\newline
+\textit{Lines 65-67: This is fine, but it should be noted that in doing this, you are underestimating the true retrieval 
+uncertainty. The particle distribution assumptions and electromagnetic scattering properties that you use in training 
+the retrieval algorithm will almost certainly not perfectly reflect the actual size and shape distributions of ice 
+particles around the globe.}\\
+\newline
+We agree. As explained above, our  objective was to derive IWC distributions consistent with the observed vertical distribution of
+CloudSat reflectivity, without implying that the resulting distributions are uncertainty or bias free.  To make the performance
+assessment more realistic, in the revised version of the manuscript, we perturbed the $N_w$ value (which in the initial version was
+parametrized as a function of height) used in the derivation of IWC as a function of observed CloudSat reflectivity by a random log-normally
+distributed factor. This accounts for uncertainties in the PSDs (at least from the perspective of the normalized PSD framework) and 
+makes the evaluation realistic. Nevertheless, as observed by the reviewer, the electromagnetic scattering properties are 
+an additional source of uncertainty.  We included additional statements in the manuscript to describe $N_w$ perturbation approach and
+discuss uncertainties in the electromagnetic scattering properties that are not quantified in the manuscript.\\ 
+\newline
+\textit{Lines 83-90 and Eq. (1): I looked over the Testud et al. (2001) paper, and could not find anything that directly
+ supported this statement, or any equations that resembled Eq. (1). Please add further explanation, either here 
+ or in an appendix, to help the reader follow your logic.}\\
+\newline
+We apologize for the confusion. Testud et al. (2001) only show that normalization by $N_w$ ($N_0^*$ in their notation) explains the variability
+in Z-R relationships (fig. 9d). Ferreira et al. (2001) \cite{ferreira2001} make the more general statement that any two integrated rainfall parameters ($X$, $Y$) 
+may be related through a power law of the form $X = m N_w^{(1-n)} X^n$, where $m$ and $n$ are constants almost independent of $N_w$. Delanoe et al. (2014)
+ \cite{delanoe2014} show that the same relationship holds for ice PSDs. We added statements to this effect in the revised manuscript.\\
+\newline
+\textit{Figure 2: Neither the caption nor the text adequately explains what is being plotted in this figure. What does each 
+individual point represent? The text says, “Figure 2 is a scatter plot representation of the class multiplicative 
+coefficient ai as a function of relative height,” but if that were the case, I would expect there to be many more 
+points on the scatter plot (i.e. 18 classes times a certain number of relative height levels, to yield hundreds of points).}\\
+\newline
+We apologize for the confusion.  The points in figure 2 were derived from 36 classes.  We initially used 36 classes in the analysis, but
+we reduced the number of classes to 18 to make the classification and the Ensemble Kalman Filter more robust.  However, we kept the results from the
+36 classes in the $N_w$ parameterization because they enable a more accurate representation of the variability of the multiplicative coefficient.
+For each of the 36 classes, we regressed IWC from the 2C-ICE product against the observed CloudSat reflectivity and derived height of the associated
+mean IWC profile peak.  We then plotted the multiplicative coefficient as a function of the height of the mean IWC profile peak.  The height was
+evaluated relative to the freezing level.  We included clarifying statements in the manuscript.\\
+\newline
+\textit{Lines 120-121: How is the data in Fig. 2 used to parameterize Nw as a function of height? Do you fit a line/curve to the 
+data in Fig. 2? This needs to be clarified.}\\
+\newline
+Yes, We fit a line to determine the variation of $ln(a)$ as a function of height and then divide the slope by $(1-b)$ to get the variation of
+$ln(N_w)$ as a function of height.\\
+\newline
+\textit{Figure 3: It would be helpful to add vertical lines to these plots to indicate the detection thresholds you are 
+assuming for the radar (8 dBZ?) and lidar.}\\
+\newline
+We included vertical lines to indicate the detection thresholds.\\
+\newline
+\textit{Line 220: It is my understanding that an ensemble Kalman smoother assumes normal distributions. How much does it matter 
+that IWC is not normally distributed in nature?}\\
+\newline
+Yes, the ensemble Kalman smoother assumes normal distributions.  We derive a Kalman gain, i.e. a matrix of type $\mathbf{Cov(X,Y) Cov(Y,Y)^{-1}}$, 
+for every class, and although IWC is not normally distributed in nature, its conditional class distributions are not likely to be as skewed 
+as the entire distribution.
+This is most likely why the Kalman smoother produces rather accurate results when observations from all instruments is available.  
+Nevertheless, from the theoretical perspective, the Kalman Smoother results are suboptimal given the non-Gaussian distribution of IWC.  This
+does not necessarily mean that more accurate results may be derived in practice given the multitude of uncertainty factors that may
+impact the results.\\
+\newline
+\textbf{Typos}\textit{Line 276: “wells” should be “well”}\\
+\newline
+Thank you for pointing that out. We corrected it in the revised version of the manuscript.\\
+\newline
+\textit{Line 308: Figure 8 should be Figure 9}\\
+\newline
+Thank you for pointing that out. We corrected it in the revised version of the manuscript.\\
+\newline
+\textit{Line 315: IWP should be IWC}\\
+\newline
+Thank you for pointing that out. We corrected it in the revised version of the manuscript.\\
+\newline
+\textit{Line 361: eliminate “out}\\
+\newline
+Thank you for pointing that out. We corrected it in the revised version of the manuscript.\\
+\newline
 \pagebreak
 \noindent \textbf{Reviewer 2:}\textit{The study investigates the synergy between observations from elastic backscatter lidar, Ku-band radar,
 and sub-millimeter radiometer observations to retrieve ice concentrations. The topic is undoubtedly timely,
@@ -268,7 +349,7 @@ described above and in the revised manuscript.  We added a sentence in the manus
 \textit{10. l. 203: I don't think that 200 000 profiles can be considered a large dataset by today's standards.}\\
 \newline
 We agree that 200,000 profiles is not a large dataset by today's standards.  However, these profiles are derived from a month of CloudSat observations.
-Specifically, all CloudSat and 2ICE product files from June 2019 were processed, and only profiles with no echo below the freezing level
+Specifically, all CloudSat and 2C-ICE product files from June 2019 were processed, and only profiles with no echo below the freezing level
 and the freezing level above ground were selected. The selection process significantly reduced the number of profiles. Nevertheless, there is sufficient
 variability in the selected profiles to derive meaningful conclusions. We added a sentence in the manuscript to clarify this point.\\
 \newline
@@ -291,7 +372,22 @@ Thank you for pointing this out.  We added the missing word.\\
 
 \begin{thebibliography}{999}
 
-  
+\bibitem{takahashi2008}
+Takahashi N, Iguchi T. Characteristics of TRMM/PR system noise and their application to the rain detection algorithm. 
+IEEE transactions on geoscience and remote sensing. 2008 May 16;46(6):1697-704.
+
+\bibitem{draper2015}
+Draper DW, Newell DA, Wentz FJ, Krimchansky S, Skofronick-Jackson GM. The global precipitation measurement (GPM) 
+microwave imager (GMI): Instrument overview and early on-orbit performance. IEEE Journal of Selected Topics in 
+Applied Earth Observations and Remote Sensing. 2015 Mar 2;8(7):3452-62.
+\bibitem{liu2006}  
+Liu Z, Hunt W, Vaughan M, Hostetler C, McGill M, Powell K, Winker D, and  Hu Y, 
+Estimating random errors due to shot noise in backscatter lidar observations. 2006, Appl. Opt. 45, 4437-4447.
+
+\bibitem{ferreira2001}
+Ferreira, F., P. Amayenc, S. Oury, and J. Testud, 2001: Study and Tests of Improved Rain Estimates from the TRMM Precipitation Radar. 
+J. Appl. Meteor. Climatol., 40, 1878–1899, https://doi.org/10.1175
+
   \bibitem{stephens2008}
   Stephens GL, Vane DG, Tanelli S, Im E, Durden S, Rokey M, Reinke D, Partain P, 
   Mace GG, Austin R, L'Ecuyer T. CloudSat mission: Performance and early science 
