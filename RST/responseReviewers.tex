@@ -45,14 +45,15 @@ which might impact results. In the revised manuscript, we included statements to
 We agree that the assumed electromagnetic scattering properties assumed in the study although
 reasonable may contain significant uncertainties.  We acknowledge this aspect in the revised manuscript 
 as well. Regarding the measurement uncertainties, we account for them in the radar and radiometer simulations,
-but only in a highly idealized way in the lidar simulations.  Specifically, we assume random errors with 0.0 mean
+and in a rather idealized way in the lidar simulations.  Specifically, we assume random errors with 0.0 mean
 and 0.5dB standard deviation in the radar observations \cite{takahashi2008}, and a Noise-Equivalent-Delta-T (NEDT)
-of 1K, which is a readily achievable level for modern satellite radiometer \cite{draper2015}. A complex 
+of 1K, which is a readily achievable level for modern satellite radiometers \cite{draper2015}. A complex 
 model of space-borne lidar measurement uncertainties was developed in \cite{liu2006}, but its parameters are
 difficult to reliably quantify from theoretical considerations based on instrument expectations alone. Instead, we
 assume a simple multiplicative error model, with the multiplicative factor model as a log-normally distributed random
-variable with 0.0 mean and 1.0 standard deviation, which result in observation uncertainties similar to those in
-the radar observations. We acknowledge the limitations of this model in the manuscript.\\
+variable with 0.0 mean and 0.1 standard deviation, which result in observation uncertainties similar to those in
+the in evaluation study of the Cloud-Aerosol Transport System (CATS) lidar-system. 
+We acknowledge the limitations of this approach in the manuscript.\\
 \newline
 \textit{2) You say in your abstract (and conclusion) that “the characteristics of 
 the instruments e.g.,  frequencies, sensitivities, etc. are set based on the 
@@ -296,8 +297,16 @@ We included clarifying statements on the definition of high-clouds in the manusc
     AOS mission instruments, it is unclear whether thermal noise is included in the retrieval experiments. 
     The authors should mention this in the description of their methodology.}\\
 \newline
-No, we don't include thermal noise in the retrieval experiments.  We acknowledge the lack of an uncertainty component in 
-the lidar model in section 2a.\\ 
+Regarding the measurement uncertainties, we account for them in the radar and radiometer simulations,
+and in a rather idealized way in the lidar simulations.  Specifically, we assume random errors with 0.0 mean
+and 0.5dB standard deviation in the radar observations \cite{takahashi2008}, and a Noise-Equivalent-Delta-T (NEDT)
+of 1K, which is a readily achievable level for modern satellite radiometers \cite{draper2015}.
+A complex model of space-borne lidar measurement uncertainties was developed in \cite{liu2006}, but its parameters are
+difficult to reliably quantify from theoretical considerations based on instrument expectations alone. Instead, we
+assume a simple multiplicative error model, with the multiplicative factor model as a log-normally distributed random
+variable with 0.0 mean and 0.1 standard deviation, which result in observation uncertainties similar to those in
+the in evaluation study of the Cloud-Aerosol Transport System (CATS) lidar-system. 
+We acknowledge the limitations of this approach in the manuscript.\\ 
 \newline
 \textit{\textbf{Minor comments}
     1. l. 29 - 31: Please provide more information on the planned or possible observation configuration of AOS, such as swath
