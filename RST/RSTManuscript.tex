@@ -22,7 +22,7 @@
 
 %% May use \\ to break lines in title:
 
-\title{Synergistic retrievals of ice in clouds from elastic backscatter lidar, 
+\title{Synergistic retrievals of ice in high clouds from elastic backscatter lidar, 
 Ku-band radar and submillimeter wave radiometer observations}
 
 %% Enter authors' names
@@ -135,7 +135,7 @@ horizontal transport of hydrometeors in the upper troposphere.  As high clouds a
 understanding the quantifying radiative processes, they constitute one of the AOS major objectives \citep{braun2022}.
 To achieve its objective, AOS will rely on a combination of active and passive observations onboard multiple spacecrafts
 in two different orbits.  One of the orbits is expected to be polar, while the other is expected to be inclined, which
-would allow the study of atmopsheric processes at sub-daily time scales, with an emphasis on deep
+would allow the study of atmospheric processes at sub-daily time scales, with an emphasis on deep
 convection, high clouds, and aerosols \citep{braun2022,yorks2022}.
 The AOS inclined observations will include backscatter
 from an elastic backscatter lidar \citep{weitkamp2006},
@@ -214,7 +214,7 @@ perfectly explains the relationships between IWC and Z calculated from observed 
 Although the initial work of \cite{testud2001} was limited to rain and only hinted about the applicability
 of the normalization concept to ice observations, subsequent studies showed that parameterizations
 of type (\ref{eq:1}) extended to ice \citep{ferreira2001,delanoe2014}.
-Equation (\ref{eq:1}) is not 
+However, equation (\ref{eq:1}) is not 
 sufficient to derive accurate, unbiased estimates of ice water contents, because $N_w$ varies considerably in 
 time and space. Nevertheless, multiple studies showed that it is beneficial to parameterize $N_w$ as a function 
 of various variables, such as temperature \citep{hogan2006retrieval, delanoe2008variational,deng2010tropical}, 
@@ -276,7 +276,7 @@ weighted mean diameter is equidistantly sampled to span the entire range of IWC 
 The assumed mass-size relation is that of \cite{brown1995improved} because it works well with the 
 SSRGA scattering calculations \citep{heymsfield2022impacts}.  The open source software scatter-1.1 of \citep{scatter-1.1}
 is used to provide the actual scattering properties.   
-To improve the representation of microphysical variability in the study, we don't assume the values of $N_w$ given
+To improve the representation of microphysical variability in the study, we do not assume the values of $N_w$ given
 by the 2C-ICE based parametrization described above as the true values. Instead, we perturb them by multiplication 
 with a log-normally distributed random variable with 0.0 mean a standard deviation of 0.5.  The 
 perturbations are vertically correlated. Specifically, normal random variables with zero mean and a standard deviation
@@ -332,7 +332,10 @@ signal are likely to
 occur near mostly around 3.0 km above the freezing level, while the lidar backscatter
 distribution exhibits a peak at around 6.0-7.0 km
 above the freezing level, which is consistent with the fact the lidar observations
-are strongly attenuated in the bottom part of the cloud.  The vertical resolutions of
+are strongly attenuated in the bottom part of the cloud.  It should be noted that, consistently with the objective of
+ this study, only CS reflectivity profiles with no echo at or below the freezing level were selected
+and used in the calculation of Ku-band reflectivity distributions shown in Figure \ref{f3}.
+The vertical resolutions of
 the radar and lidar observations are the same, i.e. 240 m, and the same as the resolution of the
 CS observations upon which they are based. In reality, the radar and lidar observations are likely to have
 different vertical resolutions and footprint sizes, which would need to be accounted for in a more 
@@ -374,7 +377,8 @@ used in the ice scattering-gas absorption collocation process.  The surface emis
 %89-, 183.31 ± 1.1, and 325.15 ± 1.5 GHz,
 all frequencies of the 10 channels of the SAPHIR-NG 
 radiometer envisioned to be deployed in the AOS mission \citep{brogniez2022time}.  One of the frequencies is 
-89-GHz, while the others are centered on the 183.31, and 325.15 GHz water vapor absorption lines. Details are
+89-GHz, while the others are centered on the 183.31, and 325.15 GHz water vapor absorption lines. Details regarding
+the radiometer and the active instruments are
 provided in Table \ref{t_sensors}.  Errors in the radiometer observations are modeled assuming a 
 Noise-Equivalent-Delta-T (NEDT) of 1K, which is a readily achievable level for modern satellite radiometers \cite{draper2015}.
 
@@ -387,8 +391,9 @@ such as $IWC$ and $D_m$. The tables are derived for a single of $N_w$, but are u
 $N_w$ using the "normalization" operations described in \citep{grecu2011}.
 \item Derivation of $N_w$-relative height parameterization using the 2C-ICE product.
 \item Estimation of IWC and related PSD parameters from CS W-band radar observations, using the tables 
-constructed
-in Step 1 and parameterization derived in Step 2.
+constructed Step 1, and $N_w$ profiles derived through parameterization obtained in Step 2 and perturbed using the random model 
+described above. Specifically, given $N_w$ and the associated $Z$ at W-band, we estimate $IWC/N_w$ as a function of $Z/N_w$ using the
+normalized tables and then derive $IWC$ from $IWC/N_w$ and $N_w$.
 \item Calculation of lidar, Ku-band radar and radiometer observations from the estimates derived in Step 3 
 and the tables obtained in Step 1, and extended with non-zero 2C-ICE estimates for the radar bins characterized by no echo
 above the noise level.
@@ -525,11 +530,10 @@ the freezing level, the $Z_{top}$ is the distance from the top of the atmosphere
 Shown in Figure \ref{f6} is the frequency of IWC gravity center
 estimated from radiometer-only observations as a function of its true value.  It may be observed in the figure that while 
 the true IWC gravity center exhibits quite a broad distribution, the one retrieved from the radiometer-only 
-observations exhibits a multimodal narrow distribution. Moreover, there is almost no correlation between the retrieved 
-and the true IWC gravity center.  This is another indication that, while the total amount of ice may be reasonably 
-estimated from radiometer-only observations, its vertical distribution can not be 
-accurately determined from 
-radiometer-only observations.
+observations exhibits a multimodal narrow distribution. Moreover, there correlation between the retrieved 
+and the true IWC gravity center is rather low.  This is another indication that, while the total amount of ice may be 
+reasonably estimated from radiometer-only observations, its vertical distribution can not be 
+accurately determined from radiometer-only observations.
 
 \begin{figure}[t]
     \centering
@@ -538,9 +542,43 @@ radiometer-only observations.
 \end{figure}
 
 \subsection{Active instrument retrievals}
+
 Although retrievals from the lidar-only or radar-only observations are not expected to be as accurate as those from
 radiometer-only observations, the lidar observations being subject to severe attenuation while the radar observations
-being limited by its sensitivity, they are nevertheless insightful.
+being limited by its sensitivity, they are nevertheless insightful. This is because quantifying the limitations of
+retrievals from active instruments may be used to better assess  the benefits of synergistic retrievals.  Shown in
+top of row of Figure \ref{f7} are the distributions of IWP estimated from lidar-only and radar-only observations 
+as a function of their true values. As apparent in the figure, and as expected, the lidar-only retrievals tend to
+be accurate for IWP values smaller than 50 g/m$^2$, while the radar-only retrievals tend to be reliable only for large
+IWP values on the order of hundreds of g/m$^2$.  Not that the radar-only retrievals exhibit a bimodal distributions,
+with a broad distribution of real IWP values associated with a single retrieved IWP value.  This is a consequence
+of the fact that there is a large number of atmospheric profiles characterized by not necessarily small IWP values that
+are not associated with detectable radar signals. The results shown in the top row of Figure \ref{f7} are conditional on
+either the CALIOP lidar or CS radar observations detecting ice, and so are the radar-only retrievals. However, the 
+indiscriminate application of a Ku-band radar-only retrieval procedure to the entire dataset may result in significant
+overestimation because clear skies would be associated with the same IWP value as ice clouds with reflectivity signal 
+below the detection threshold. On the other hand, limiting the application of the radar-only retrieval procedure to atmospheric profiles
+with detectable ice clouds would result in a significant underestimation, as a large number of atmospheric profiles
+with ice clouds would be associated with zero IWP.  From this perspective, the derivation of  Ku-band radar-only ice estimates
+is not useful if coincident radiometer observations are available.
+
+Shown in the bottom row of Figure \ref{f7} are the distributions of IWC gravity centers
+estimated from lidar-only and radar-only observations as a function of their true values. Results are similar to those
+obtained for IWP, in the sense that the radar-only retrieval distribution is bimodal and reliable only for ice clouds
+with Ku-band radar observations above the detection threshold.
+The lidar-only retrievals produce a much broader IWC gravity center distribution, with values that exhibit moderate 
+correlation with the true IWC gravity centers.  
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.481\linewidth]{Figs/fig07a.rev.png}
+    \includegraphics[width=.481\linewidth]{Figs/fig07b.rev.png}
+    \includegraphics[width=.481\linewidth]{Figs/fig07c.rev.png}
+    \includegraphics[width=.481\linewidth]{Figs/fig07d.rev.png}
+    \caption{Top Row: Density plots of IWP retrievals from lidar-only (left), and radar-only (right) observations as a function
+    of true IWP. Bottom Row: Same as in the top row but for IWC gravity center.}\label{f7}
+\end{figure}
+
 \subsection{Synergistic retrievals}
 
 The synergy of the instrument on the estimates may be investigated by simply incorporating lidar 
@@ -557,27 +595,26 @@ and potential biases in the simulated observations may distort conclusions to so
 used in this study are state-of-the-art and are expected to enable a realistic characterization of the impact
 of individual instruments on the synergistic retrievals.
 
-Shown in Figure \ref{f7} is the distribution of the synergistic IWP estimates as a function of their true
+Shown in Figure \ref{f8} is the distribution of the synergistic IWP estimates as a function of their true
 values.  As apparent in the figure, the synergistic IWP estimates are more accurate than the radiometer-only
-estimates. At the same time, as apparent in Figure \ref{f8}, the retrieved conditional mean IWC for the 
-18 classes described section 2a and shown in Figure \ref{f1} are in significantly better (almost perfect)
-agreement with the true IWC profiles than those derived from radiometer-only observations.  Furthermore,
-as seen in Figure \ref{f9} the synergistic IWC gravity center estimates are in very good agreement with 
-the true IWC gravity center.
-
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.75\textwidth,angle=0]{./Figs/fig07.rev.png}\\
-    \caption{Same as in Figure \ref{f4}, but with the lidar and radar observations incorporated in the
-    retrievals.}\label{f7}
-\end{figure}
+estimates. At the same time, as apparent in Figure \ref{f9}, the retrieved conditional mean IWC for the 
+18 classes described section 2a and shown in Figure \ref{f1} are in significantly better
+agreement with the true IWC profiles than those derived from radiometer-only observations.  Moreover,
+as seen in Figure \ref{f10} the synergistic IWC gravity center estimates are in much better agreement with 
+the true IWC gravity center than those derived from single-instrument observations.
 
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.75\textwidth,angle=0]{./Figs/fig08.rev.png}\\
-    \caption{Same as in Figure \ref{f5}, but with the lidar and radar observations incorporated in the
+    \caption{Same as in Figure \ref{f4}, but with the lidar and radar observations incorporated in the
     retrievals.}\label{f8}
+\end{figure}
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.75\textwidth,angle=0]{./Figs/fig09.rev.png}\\
+    \caption{Same as in Figure \ref{f5}, but with the lidar and radar observations incorporated in the
+    retrievals.}\label{f9}
 \end{figure}
 
 While the estimates based on all instruments are significantly more accurate than those based on radiometer-only
@@ -604,6 +641,35 @@ top of the clouds, where the radar observations are above the noise level only o
 the inclusion of the radar observations in the retrieval process has a notable impact on the
 accuracy of the IWC estimates relative to radiometer-only retrievals. 
 
+Additional insight may be gained by examining the distribution of the retrieved of IWP and IWC gravity center as
+a function of their true values.  These distributions are show in Figure \ref{f11} for the lidar-radiometer
+and radar-radiometer retrievals.  As apparent in the figure, the inclusion of radiometer observations improves both
+the lidar and radar retrievals. However, neither of the two instrument combinations is able to provide estimates
+that are as accurate as those derived from all instruments.  Moreover, the lidar-radiometer IWP retrievals appear to be
+less accurate than lidar-only retrievals. This may be an artifact of statistical inversion methodology, which may 
+make suboptimal use of correlations in the observations and improve the accuracy of the estimates for some type of 
+profiles at the expense of others.  While other statistical inversion methodologies may be able to eliminate this
+artifact, given the complexity of the problem and the multiple sources of uncertainty, no better methodology is
+obvious yet.
+
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.75\textwidth,angle=0]{./Figs/fig10.rev.png}\\
+    \caption{Same as in Figure \ref{f6}, but with the lidar and radar observations incorporated in the
+    retrievals.}\label{f10}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=.481\linewidth]{Figs/fig11a.rev.png}
+    \includegraphics[width=.481\linewidth]{Figs/fig11b.rev.png}
+    \includegraphics[width=.481\linewidth]{Figs/fig11c.rev.png}
+    \includegraphics[width=.481\linewidth]{Figs/fig11d.rev.png}
+    \caption{Top Row: Density plots of IWP retrievals from lidar-radiometer (left), and radar-radiometer (right) observations as a function
+    of true IWP. Bottom Row: Same as in the top row but for IWC gravity center.}\label{f11}
+\end{figure}
+
 %Therefore, results in table
 %\ref{t1} are in agreement with a qualitative analysis.  Specifically, given the 
 %limited sensitivity of the Ku-band radar, the fraction of profiles with radar 
@@ -612,24 +678,20 @@ accuracy of the IWC estimates relative to radiometer-only retrievals.
 %identify the most likely vertical IWC distribution class for all profiles. 
 
 
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.75\textwidth,angle=0]{./Figs/fig09.rev.png}\\
-    \caption{Same as in Figure \ref{f6}, but with the lidar and radar observations incorporated in the
-    retrievals.}\label{f9}
-\end{figure}
 
 \begin{table}[t]
 \caption{Performance summary.}\label{t1}
 \begin{center}
-\begin{tabular}{c|cccc}
+\begin{tabular}{c|ccccccc}
 \hline\hline
-\backslashbox{Score}{Instruments} & Radar-Radiometer & Lidar-Radiometer & Radar-Lidar-Radiometer\\
-Score& & & &\\
+\backslashbox{Score}{Instruments} & Lidar-& Radar- & Radiometer- & Lidar- & 
+Lidar- & Radar-	& Lidar-\\
+ & Only & Only & Only & Radar & Radiometer& Radiometer & Radar-Radiometer\\
 \hline
 % NRMS & 0.73 &  0.59  &  0.32 & 0.32 \\
-NRMS & 0.73 &  0.59  &  0.32 & 0.22 \\
-Class. Accurracy & 0.39 & 0.48 & 0.92 & 0.94 \\
+NRMS & 0.84	& 0.67 & 0.64 & 0.61 &	0.56 &	0.54 &	0.48 \\
+%0.73 &  0.59  &  0.32 & 0.22 \\
+Class. Accurracy & 0.40	& 0.39 &	0.35 &	0.49 &	0.62& 0.53	& 0.64 \\
 \hline
 \end{tabular}
 \end{center}
