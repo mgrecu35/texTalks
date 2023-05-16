@@ -133,7 +133,7 @@ characterize the microphysical properties of ice particles. In the AOS terminolo
 generated clouds \citep{braun2022}. They are the result of strong vertical mass transport accompanied by
 horizontal transport of hydrometeors in the upper troposphere.  As high clouds are of paramount importance in
 understanding the quantifying radiative processes, they constitute one of the AOS major objectives \citep{braun2022}.
-To achieve its objective, AOS will rely on a combination of active and passive observations onboard multiple spacecrafts
+To achieve its objectives, AOS will rely on a combination of active and passive observations onboard multiple spacecrafts
 in two different orbits.  One of the orbits is expected to be polar, while the other is expected to be inclined, which
 would allow the study of atmospheric processes at sub-daily time scales, with an emphasis on deep
 convection, high clouds, and aerosols \citep{braun2022,yorks2022}.
@@ -141,7 +141,7 @@ The AOS inclined observations will include backscatter
 from an elastic backscatter lidar \citep{weitkamp2006},
 Ku-band radar reflectivity, and submillimeter wave radiometer brightness temperature measurements. 
 While not necessarily optimal for cloud ice estimation, these measurements are 
-complimentary for synergistic characterization of ice clouds. 
+complimentary and enable the synergistic characterization of ice clouds. 
 That is, despite the fact that lidar observations 
 attenuate quickly in thick ice clouds and the Ku-band radar will not be able to detect clouds 
 characterized by an echo weaker than 8.0 dBZ (which is the expected sensitivity of the radar in the inclined
@@ -172,7 +172,7 @@ difference relative to previous studies is the unique combination of instruments
 mentioned that although based on observations rather than CRM simulations, the approach used in this study is
 idealized in many respects. As a consequence, the results presented may not unbiasedly extrapolate to practice.
 Nonetheless, the results are expected to provide useful insights into the potential of the AOS inclined observations and
-good first step towards the development of an operational synergistic retrieval of ice clouds from the AOS inclined observations.
+good first step towards the development of an operational synergistic retrieval of ice clouds from AOS inclined observations.
 The article is organized as follows.  In Section 2, we describe the approach used to derive the ice properties and
 the associated simulated observations, the retrieval and the evaluation methodology.  In Section 3, we 
 present the results of the evaluation methodology. We conclude in Section 4.
@@ -204,34 +204,58 @@ encapsulate the variability of Ice Water Content (IWC) - reflectivity relationsh
 i.e. the 
 normalized Particle Size Distribution (PSD) intercept \citep{testud2001,bringi2003}. The normalized
 PSD intercept is defined as $N_w=\frac {4^4} {\pi \rho_w} \frac {IWC} {D_m^4}$, where $IWC$ is the ice water 
-content associated with the PSD, and $D_m$ is the mass weighted mean diameter.  \cite{testud2001} showed 
+content associated with the PSD, and $D_m$ is the mass weighted mean diameter.  Based on the work of \cite{testud2001},
+\cite{ferreira2001} and \cite{delanoe2014} showed 
 that the variability in IWC reflectivity (Z) relationships may be fully explained by variability in $N_w$, and 
 that a formula of the type
 \begin{equation}
 IWC=N_w^{1-b}a_{norm} Z^b \label{eq:1}
 \end{equation}
-perfectly explains the relationships between IWC and Z calculated from observed PSDs. 
-Although the initial work of \cite{testud2001} was limited to rain and only hinted about the applicability
-of the normalization concept to ice observations, subsequent studies showed that parameterizations
-of type (\ref{eq:1}) extended to ice \citep{ferreira2001,delanoe2014}.
+(where $a_{norm}$ and $b$ are constants) explains almost perfectly the relationships between IWC and Z calculated from observed PSDs.
 However, equation (\ref{eq:1}) is not 
 sufficient to derive accurate, unbiased estimates of ice water contents, because $N_w$ varies considerably in 
 time and space. Nevertheless, multiple studies showed that it is beneficial to parameterize $N_w$ as a function 
 of various variables, such as temperature \citep{hogan2006retrieval, delanoe2008variational,deng2010tropical}, 
 rather than using $N_w$ independent reflectivity ice relations.  In this study, we parameterize
 $N_w$ as a function of temperature based on the CloudSat 2C-ICE product \citep{deng2010tropical,deng2013evaluation}.  
-Specifically, we cluster, based on similarity (quantified through the evaluation of the Euclidian distance between profiles), 
+A scatter-plot analysis of relationships between the 2C-ICE IWC and the associated reflectivity suggests that
+the multiplicative coefficient in a power low ice-reflectivity relationship is parameterized as a function of temperature 
+(or equivalently, as a function of height relative to the freezing level) in 
+the default 2C-ICE retrievals. The default multiplicative coefficient (the value the provides the IWC estimate prior
+to the ingestion of the lidar observations) may be simply estimated by regressing the 2C-ICE IWC on the associated CloudSat reflectivity 
+as a function of height relative the freezing level. Specifically, a regression of the type $ln(IWC)=ln(a)+b*ln(Z)$ is performed for 
+each bin referenced relative to the zero degree bin is performed, and the variation of $ln(a)$ is parameterized as a function of the
+relative height.  The results are shown in Figure \ref{f2}. As apparent in the figure, and as expected, $a$ exhibits a strong variation 
+with the relative height. Given that any deviation of the multiplicative coefficient in 
+an IWC-Z relation from an average is equivalent to a deviation of the associated $N_w$ from its mean value 
+\citep{ferreira2001,delanoe2014}, the variation of $a$ as a function of relative-height may be converted into an $N_w$ 
+as a function of relative-height relationship.  We, therefore, use the data in Figure \ref{f2} to parameterize $N_w$ as a 
+function of the relative height.  Specifically, given that $(1-b)ln(N_w)+ln(a_{norm})=ln(a)$ and $ln(a)=ln(a_0)+s*H$, with 
+$a_0$ and $s$ the intercept and the slope of a regression for the data in Figure \ref{f2}, we 
+can express $N_w$ as a function of the relative height, slope $s$, and parameters $a_0$ and $a_{norm}$.
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[width=0.75\textwidth,angle=0]{./Figs/fig02.rev.png}\\
+    \caption{Multiplicative factor in the 2ICE IWC-relation as a function of the height relative to the freezing level.}\label{f2}
+\end{figure}
+
+To investigate the variability in the vertical distribution of the 2C-ICE estimates and their consistency with our estimates, 
+we cluster, based on similarity  (quantified through the evaluation of the Euclidian distance between profiles), 
 a large set 2C-ICE profiles into 18 classes using a k-Means 
-procedure. The mean IWC profiles associated with the 18 classes are shown in continuous lines in Figure 1.  
+procedure. The mean IWC profiles associated with the 18 classes are shown in continuous lines in Figure \ref{f1}.  
 Our estimates, derived using PSD assumptions and electromagnetic scattering calculations that enable 
 accurate and physically consistent simulations of radar observations at Ku-band and radiometer observations of 
-submillimeter-wave frequencies are also shown in Figure 1. These estimates are based on the self-similarity 
+submillimeter-wave frequencies are also shown in the figure. These estimates are based on the self-similarity 
 Rayleigh-Gans approximation (SSRGA) of \cite{hogan2017ssrga}. Details regarding the
-estimation process are provided in the following paragraphs.  As apparent in Figure 1, the CS and SSRGA estimates are in good 
+estimation process are provided in the following paragraphs.  As apparent in Figure \ref{f1}, the CS and SSRGA estimates are in good 
 agreement.  Some discrepancies due to differences between the SSRGA $N_w$ parameterization and the CS 2C-ICE 
 "a priori assumptions" are also apparent, but they are not deemed critical in this study, whose objective is 
 the investigation of synergistic lidar, Ku-band radar and submillimeter-wave radiometer retrievals, because the 
-outcome is not likely to be sensitive to such details.
+outcome is not likely to be sensitive to such details. Also apparent in Figure \ref{f1} is the fact that there is significant
+variability in the vertical distribution of the 2C-ICE IWC estimates, which makes the estimation of IWC profiles from passive-only 
+observations challenging.  
+
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.75\textwidth,angle=0]{./Figs/fig01.png}\\
@@ -243,28 +267,7 @@ outcome is not likely to be sensitive to such details.
     is defined relative to the freezing level.}\label{f1}
 \end{figure}
 
-A scatter-plot analysis (not shown) of relationships between the 2C-ICE IWC and the associated reflectivity suggests that
-$a$ is parameterized as a function of temperature (or equivalently, as a function of height relative to the freezing level) in 
-the default 2C-ICE retrievals. The default $a$ (the value the provides the IWC estimate prior to the ingestion of the lidar
-observations) may be simply estimated by regressing the 2C-ICE IWC on the associated CloudSat reflectivity as a function of 
-height relative the freezing level. Specifically, a regression of the type $ln(IWC)=ln(a)+b*ln(Z)$ is performed for 
-each bin relative to the zero degree bin is performed, and variation of $ln(a)$ is parameterized as a function of the
-relative height.  The results are shown in Figure 2. As apparent in the figure, and as expected, $a$ exhibits a strong variation 
-with the relative height.  Coefficient $b_i$ exhibits a height dependency as well (not shown), but the range of variation is 
-significantly smaller, almost zero relative to the mean value of $b$. Given that any deviation of the multiplicative coefficient in 
-an IWC-Z relation from an average is equivalent to a deviation of the associated $N_w$ from its mean value 
-(Testud et al. 2001), the variation of $a$ as a function of relative-height may be converted into a $N_w$ 
-as a function of relative-height relationship.  We, therefore, use the data in Fig. 2 to parameterize $N_w$ as a 
-function of the relative height.  Specifically, given that $(1-b)ln(N_w)+ln(a_{norm})=ln(a)$ and $ln(a)=ln(a_0)+s*H$, we 
-can express $N_w$ as a function of the relative height, slope $s$, and parameters $a_0$ and $a_{norm}$.
-
-\begin{figure}[t]
-    \centering
-    \includegraphics[width=0.75\textwidth,angle=0]{./Figs/fig02.rev.png}\\
-    \caption{Multiplicative factor in the 2ICE IWC-relation as a function of the height relative to the freezing level.}\label{f2}
-\end{figure}
-
-For the determination of reference $a$ and $b$ values to be used with Equation (\ref{eq:1}), we assume that 
+For the determination of reference $a_{norm}$ and $b$ values to be used with Equation (\ref{eq:1}), we assume that 
 PSDs are normalized gamma  distributions with $N_w=0.08cm^{-4}$ and $\mu=2$ and calculate 
 \begin{equation}
  Z=\frac {\lambda ^4} {\pi ^5 |K_w|^2} \int_0^{\infty} N(D,D_m) \sigma _b(D) dD
@@ -287,8 +290,8 @@ to roughly mimic the observed variability in $N_w$ derived from in situ observat
 in \cite{heymsfield2022impacts}. In addition, we are adding a random noise of
 0.0 mean and 0.5 dB standard deviation to the calculated reflectivity values, which is consistent with the expected
 performance of a space-borne Ku-band radar system \citep{takahashi2008}.  Nevertheless, it should be noted that the
-uncertainties in the reflectivity calculations are likely to be even larger, given that the SSRGA theory although 
-quite accurate cannot possibly capture the entire range of uncertainties in the scattering properties of ice particles.
+uncertainties in the reflectivity calculations are likely to be even larger, given that the SSRGA theory, although 
+quite accurate, cannot possibly capture the entire range of uncertainties in the scattering properties of ice particles.
 Specifically, the SSRGA calculations were carried out assuming ice particles consisting of aggregates of 
 bullet rosettes, columnar crystals, and plates.
 
@@ -380,7 +383,7 @@ radiometer envisioned to be deployed in the AOS mission \citep{brogniez2022time}
 89-GHz, while the others are centered on the 183.31, and 325.15 GHz water vapor absorption lines. Details regarding
 the radiometer and the active instruments are
 provided in Table \ref{t_sensors}.  Errors in the radiometer observations are modeled assuming a 
-Noise-Equivalent-Delta-T (NEDT) of 1K, which is a readily achievable level for modern satellite radiometers \cite{draper2015}.
+Noise-Equivalent-Delta-T (NEDT) of 1K, which is a readily achievable level for modern satellite radiometers \citep{draper2015}.
 
 The processing steps used to process the CS reflectivity observations and calculate the lidar, Ku-band and 
 submillimeter-wave radiometer observations may be summarized as follows:
@@ -538,14 +541,14 @@ accurately determined from radiometer-only observations.
 \begin{figure}[t]
     \centering
     \includegraphics[width=0.75\textwidth,angle=0]{./Figs/fig06.rev.png}\\
-    \caption{Same as in Figure 4, but for the IWC gravity center.}\label{f6}
+    \caption{Same as in Figure \ref{f4}, but for the IWC gravity center.}\label{f6}
 \end{figure}
 
 \subsection{Active instrument retrievals}
 
 Although retrievals from the lidar-only or radar-only observations are not expected to be as accurate as those from
 radiometer-only observations, the lidar observations being subject to severe attenuation while the radar observations
-being limited by its sensitivity, they are nevertheless insightful. This is because quantifying the limitations of
+being limited by sensitivity, they are nevertheless insightful. This is because quantifying the limitations of
 retrievals from active instruments may be used to better assess  the benefits of synergistic retrievals.  Shown in
 top of row of Figure \ref{f7} are the distributions of IWP estimated from lidar-only and radar-only observations 
 as a function of their true values. As apparent in the figure, and as expected, the lidar-only retrievals tend to

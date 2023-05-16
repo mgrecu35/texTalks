@@ -84,7 +84,7 @@ We agree. We do not consider CloudSat retrievals uncertainty or bias free, but w
 they are consistent with an observed vertical distribution of reflectivity at W-band. The vertical distributions of radar reflectivity
 derived from satellite or ground-based observations are generally difficult to reproduce by model simulations.
 We added statements
-to this effect in the revised manuscript (bottom of page 3 and top part of page 4).\\
+to this effect in the revised manuscript (lines 67-69 in the Introduction).\\
 \newline
 \textit{Lines 65-67: This is fine, but it should be noted that in doing this, you are underestimating the true retrieval 
 uncertainty. The particle distribution assumptions and electromagnetic scattering properties that you use in training 
@@ -122,15 +122,15 @@ We apologize for the confusion.  The points in figure 2 were derived from a clas
 We initially used 36 classes in the analysis, but
 we reduced the number of classes to 18 to make the classification and the Ensemble Kalman Filter more robust.  
 For consistency and simplicity in the revised manuscript we derive IWC-Z relationships 
-for each CloudSat radar bin, with the bins indexed relative to the freezing level bin.  The relative height is now defined as the distance
+for each CloudSat radar bin, with the bins indexed relative to the freezing level bin.  The relative height is defined as the distance
 between the height of the associated bin relative to the freezing level.  Results are rather similar, although the overall performance is
-degraded to some degree.\\
+degraded to some degree due to the inclusion of the $N_w$ perturbation component.\\
 \newline
 \textit{Lines 120-121: How is the data in Fig. 2 used to parameterize Nw as a function of height? Do you fit a line/curve to the 
 data in Fig. 2? This needs to be clarified.}\\
 \newline
 Yes, we fit a line to determine the variation of $ln(a)$ as a function of height and then divide the slope by $(1-b)$ to get the variation of
-$ln(N_w)$ as a function of height. We added explanations in the paragraph preceding Equation (2).\\
+$ln(N_w)$ as a function of height. We added explanations to this effect in the revised manuscript (lines 114-124).\\
 \newline
 \textit{Figure 3: It would be helpful to add vertical lines to these plots to indicate the detection thresholds you are 
 assuming for the radar (8 dBZ?) and lidar.}\\
@@ -286,7 +286,7 @@ We agree with the reviewer. The revised manuscript includes a randomization of t
 we randomly perturb $N_w$ by multiplying its parameterized value with log-normally distributed
 random variable with zero mean a standard deviation of 0.5.  As explained above, we use a Gaussian smoothing filter to impose a
 vertical auto-correlation in
-$N_w$ similar to that observed in field experiments. This is explained in lines 153 through 162 of the revised manuscript.\\
+$N_w$ similar to that observed in field experiments. This is explained in lines 155-165 of the revised manuscript.\\
 \newline
 \textit{3. The authors should include all radiometer channels in their analysis.}\\
 \newline
@@ -337,7 +337,7 @@ observed PSDs.  Their calculations are publicly available at https://github.com/
 of the ($Z/N_w$,$IWC/N_w$) distribution to almost one-to-one relationships.  As explained in the manuscript, we use the self-similar Rayleigh-Gans approximation
 to model the backscattering property of ice particles but get a normalization behavior similar to that anticipated by Testud et al. (2001),
 shown in \cite{delanoe2014} and exhbited in the \cite{chase2021} database.
-We added statements to this effect in the paragraph following the definition of Equation (1).\\
+We added statements to this effect in the paragraphs describing Equation (1).\\
 \newline
 \textit{3. l. 96: Please clarify: What do the authors mean by 'similarity'? Euclidean distance?}\\
 \newline
@@ -353,7 +353,7 @@ to 18 to make the classification and
 estimation process more robust. However, for consistency and simplicity in the revised manuscript we derive IWC-Z relationships 
 for each CloudSat radar bins, with the bins indexed relative to the freezing level bin.  The relative height is defined as the distance
 between the height of the associated bin relative to the freezing level.  Results are rather similar, although the overall performance is
-degraded to some degree.\\
+degraded to some degree due to the inclusion of the $N_w$ perturbation.\\
 \newline
 \textit{5. Fig. 2: Please add a line showing the parametrization used to derive the database.}\\
 \newline
