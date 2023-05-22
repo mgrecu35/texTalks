@@ -1,0 +1,1 @@
+../ametsocV6.1.cls

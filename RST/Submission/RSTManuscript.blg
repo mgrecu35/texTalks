@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2022)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: RSTManuscript.aux
+The style file: ametsocV6.bst
+Database file #1: references.bib
+Warning--entry type for "scatter-1.1" isn't style-file defined
+--line 673 of file references.bib
+Warning--entry type for "multiscatter-1.2.11" isn't style-file defined
+--line 689 of file references.bib
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Warning--can't use both volume and number fields in tensorflow2016
+Warning--missing publisher in scatter-1.1
+Warning--missing publisher in multiscatter-1.2.11
+You've used 39 entries,
+            3493 wiz_defined-function locations,
+            1084 strings with 15500 characters,
+and the built_in function-call counts, 41970 in all, are:
+= -- 4912
+> -- 1463
+< -- 17
++ -- 872
+- -- 369
+* -- 2157
+:= -- 4314
+add.period$ -- 78
+call.type$ -- 39
+change.case$ -- 307
+chr.to.int$ -- 38
+cite$ -- 42
+duplicate$ -- 4257
+empty$ -- 2243
+format.name$ -- 454
+if$ -- 8532
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 424
+newline$ -- 128
+num.names$ -- 156
+pop$ -- 1868
+preamble$ -- 1
+purify$ -- 273
+quote$ -- 0
+skip$ -- 2609
+stack$ -- 0
+substring$ -- 1980
+swap$ -- 3461
+text.length$ -- 3
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 336
+warning$ -- 3
+while$ -- 198
+width$ -- 0
+write$ -- 433
+(There were 5 warnings)

@@ -1,0 +1,536 @@
+%
+% JOURNAL ABBREVIATIONS
+%
+@STRING{AMS 	= "Amer.\ Meteor.\ Soc."}
+@STRING{AGU 	= "Amer.\ Geophys.\ Union"}
+@STRING{AIP 	= "Amer. Inst. Phys."}
+@STRING{ADGEO     = "Adv.\ Geosci."}
+@STRING{AFM       = "Agric.\ For.\ Meteor."}
+@STRING{AM        = "Ann.\ Meteor."}
+@STRING{AN        = "Astrophys.\ Norv."}		% Astrophysica Norvegica
+@STRING{AO        = "Atmos.--Ocean"}			% Atmosphere--Ocean, published by Canadian Meteorological Society (CMOS)
+@STRING{AR        = "Atmos.\ Res."}			% Atmospheric Research
+@STRING{ARFM      = "Annu.\ Rev.\ Fluid Mech."}
+@STRING{AUMET     = "Aust.\ Meteor.\ Mag."}
+@STRING{BAMS      = "Bull.\ Amer.\ Meteor.\ Soc."}
+@STRING{CAP       = "Contrib.\ Atmos.\ Phys."}
+@STRING{CC        = "Climate Change"}      % Climate Change 
+@STRING{CCH       = "Climatic Change"}			% Climatic Change
+@STRING{CDYN      = "Climate Dyn."}
+@STRING{CHAOS     = "Chaos"}
+@STRING{COL       = "Collier's"}
+@STRING{CRS       = "Cont.\ Shelf Res."}
+@STRING{DAO       = "Dyn.\ Atmos.\ Oceans"}
+@STRING{ECO       = "Ecology"}
+@STRING{EI        = "Earth Interact."}
+@STRING{GA        = "Geophysica"}			% Geophysica, published by Geophysical Society of Finland 
+@STRING{GEOMAG    = "Geophys.\ Mag."}
+@STRING{GN        = "Geophys.\ Norv."}			% Geophysica Norvegica
+@STRING{GRL       = "Geophys.\ Res.\ Lett."}
+@STRING{GEOINT    = "Geofis.\ Int."}			% Geofisica Internacional (Mexican journal -- vols. 3--5 contained proceedings from a hurricane conference
+@STRING{GEOPUB    = "Geofys.\ Publ."}
+@STRING{GPC       = "Global Planet.\ Change"}
+@STRING{HP        = "Health Phys."}
+@STRING{IAOP      = "Izv.\ Atmos.\ Ocean.\ Phys.\ (Engl.\ Transl.)"}
+@STRING{IJC       = "Int.\ J.\ Climatol."}
+@STRING{JAM       = "J.\ Appl.\ Meteor."}		% renamed to name below in 2006
+@STRING{JAMC      = "J.\ Appl.\ Meteor.\ Climatol."}  	% Journal of Applied Meteorology and Climatology (this journal used to be called the Journal of Applied Meteorology before 2006)
+@STRING{JAS       = "J.\ Atmos.\ Sci."}
+@STRING{JAOT      = "J.\ Atmos.\ Oceanic Technol."}
+@STRING{JCAM      = "J.\ Climate Appl.\ Meteor."}	% from 1983--87, now JAMC
+@STRING{JCLI      = "J.\ Climate"}
+@STRING{JCR       = "J.\ Coastal Res."}
+@STRING{JFM       = "J.\ Fluid\ Mech."}
+@STRING{JEM       = "J.\ Eng.\ Math."}			% Journal of Engineering Mathematics
+@STRING{JGR       = "J.\ Geophys.\ Res."}
+@STRING{JHM       = "J.\ Hydrometeor."}
+@STRING{JMS       = "J.\ Mar.\ Syst."}
+@STRING{JM        = "J.\ Meteor."}
+@STRING{JMR       = "J.\ Mar.\ Res."}
+@STRING{JMSJ      = "J.\ Meteor.\ Soc.\ Japan"}
+@STRING{JPO       = "J.\ Phys.\ Oceanogr."}
+@STRING{JOCEAN    = "J.\ Oceanogr."}			% Journal of Oceanography
+@STRING{JOSJ      = "J.\ Oceanogr.\ Soc.\ Japan"}
+@STRING{JSE       = "J.\ Struct.\ Eng."}	% Journal of Structural Engineering at ASCE
+@STRING{JTM       = "J.\ Tropical Meteor."}
+@STRING{JWEIA     = "J.\ Wind Eng.\ Ind.\ Aerodyn."}
+@STRING{MA        = "Meteor.\ Appl."}
+@STRING{MAP       = "Meteor.\ Atmos.\ Phys."}
+@STRING{METMON    = "Meteor.\ Monogr."}
+@STRING{METZEIT   = "Meteor.\ Z."}
+@STRING{MWL       = "Mar.\ Wea.\ Log"}
+@STRING{MWR       = "Mon.\ Wea.\ Rev."}
+@STRING{NAT       = "Nature"}
+@STRING{NHR       = "Nat.\ Hazards Rev."}
+@STRING{NWD       = "Natl.\ Weather Dig."}
+@STRING{OA        = "Oceanol. Aeta"}
+@STRING{OCEAN     = "Oceanography"}                	% a quarterly journal of The Oceanography Society
+@STRING{PAG       = "Pure Appl.\ Geophys."}
+@STRING{PF        = "Phys.\ Fluids"}
+@STRING{PHYSD     = "Physica D"}
+@STRING{PMG       = "Pap.\ Meteor.\ Geophys."}	% Papers in Meteorology and Geophysics
+@STRING{PNAS      = "Proc.\ Natl.\ Acad.\ Sci.\ (USA)"}
+@STRING{PRE       = "Phys.\ Rev.\ E"}
+@STRING{PRSA      = "Proc.\ Roy.\ Soc."}
+@STRING{PT        = "Phys.\ Today"}
+@STRING{PTRS      = "Philos.\ Trans.\ Roy.\ Soc.\ London"}
+@STRING{QJRMS     = "Quart.\ J.\ Roy.\ Meteor.\ Soc."}
+@STRING{RGEO      = "Rev. Geophys."}
+@STRING{SCI       = "Science"}
+@STRING{SOLA      = "SOLA"}				% Scientific Online Letters on the Atmosphere
+@STRING{TAGU      = "Eos, Trans.\ Amer.\ Geophys.\ Union"}
+@STRING{TELLUS    = "Tellus"}
+@STRING{TCFD      = "Theor.\ Comput.\ Fluid Dyn."}
+@STRING{WEA       = "Weather"}
+@STRING{WW        = "Weatherwise"}
+@STRING{WF        = "Wea.\ Forecasting"}
+@STRING{WMOB      = "WMO Bull."}
+
+%% SAMPLE REFERENCES. Insert your own reference database below the line.
+
+@article{Becker+Schmitz2003,
+         author = {E. Becker and G. Schmitz},
+         title = {Climatological effects of orography and land--sea heating contrasts on the gravity
+                  wave--driven circulation of the mesosphere},
+         journal = {J. Atmos. Sci.},
+         year = {2003},
+         volume = 60,
+         pages = {103--118}, 
+        doi = {10.1175/1520-0469(2003)060<0103:CEOOAL>2.0.CO;2}}
+
+
+@article {MeixnerEA2002,
+	author = {T. Meixner and L. A. Bastidas and H. V. Gupta and R. C. Bales},
+	title = {Multicriteria parameter estimation for models of stream chemical composition},
+	journal = {Water Resour. Res.},
+	volume = {38},
+	doi = {10.1029/2000WR000112},
+	eid = {1027},
+	year = {2002}}
+
+@article{Knutti2008,
+	author={R. Knutti and M. R. Allen and P. Friedlingstein and J. M. Gregory and G. C. Hegerl and G. A. Meeh and M. Meinshausen and J. M. Murphy and G.-K. Plattne and S. C. B. Raper 		and T. F. Stocker and P. A. Stott and H. Teng and and T. M. L. Wigley},
+	title={A review of uncertainties in global temperature projections over the twenty-first century},
+	journal = {J. Climate},
+	year = {2008},
+	volume = 21,
+	pages = {2651--2663},
+          doi = {10.1175/2007JCLI2119.1}}
+
+@article {EmeryEA1986,
+author = {Emery, W. J. and Thomas, A. C. and Collins, M. J. and Crawford, W. R. and Mackas, D. L.},
+title = {An objective method for computing advective surface velocities from sequential infrared satellite images},
+journal = {J. Geophys. Res.},
+volume = {91},
+doi = {10.1029/JC091iC11p12865},
+pages = {12865--12878},
+year = {1986}
+}
+
+@book{mackay2003information,
+  title={Information theory, inference and learning algorithms},
+  author={MacKay, David JC},
+  year={2003},
+  publisher={Cambridge university press}
+}
+@article{grecu2018,
+  title={Nonparametric methodology to estimate precipitating ice from multiple-frequency radar reflectivity observations},
+  author={Grecu, Mircea and Tian, Lin and Heymsfield, Gerald M and Tokay, Ali and Olson, William S and Heymsfield, Andrew J and Bansemer, Aaron},
+  journal={Journal of Applied Meteorology and Climatology},
+  volume={57},
+  number={11},
+  pages={2605--2622},
+  year={2018}
+}
+
+@inproceedings{tensorflow2016,
+  title={Tensorflow: a system for large-scale machine learning.},
+  author={Abadi, Mart{\'\i}n and Barham, Paul and Chen, Jianmin and Chen, Zhifeng and Davis, Andy and Dean, Jeffrey and Devin, Matthieu and Ghemawat, Sanjay and Irving, Geoffrey and Isard, Michael and others},
+  booktitle={Osdi},
+  volume={16},
+  number={2016},
+  pages={265--283},
+  year={2016},
+  organization={Savannah, GA, USA}
+}
+
+@book{deepL2016,
+  title={Deep learning},
+  author={Goodfellow, Ian and Bengio, Yoshua and Courville, Aaron},
+  year={2016},
+  publisher={MIT press}
+}
+
+@article{deng2015,
+  title={CloudSat 2C-ICE product update with a new Ze parameterization in lidar-only region},
+  author={Deng, Min and Mace, Gerald G and Wang, Zhien and Berry, Elizabeth},
+  journal={Journal of Geophysical Research: Atmospheres},
+  volume={120},
+  number={23},
+  pages={12--198},
+  year={2015},
+  publisher={Wiley Online Library}
+}
+@article{stephens2002,
+  title={The CloudSat mission and the A-Train: A new dimension of space-based observations of clouds and precipitation},
+  author={Stephens, Graeme L and Vane, Deborah G and Boain, Ronald J and Mace, Gerald G and Sassen, Kenneth and Wang, Zhien and Illingworth, Anthony J and O'connor, Ewan J and Rossow, William B and Durden, Stephen L and others},
+  journal={Bulletin of the American Meteorological Society},
+  volume={83},
+  number={12},
+  pages={1771--1790},
+  year={2002},
+  publisher={American Meteorological Society}
+}
+@article{testud2001,
+  title={The concept of “normalized” distribution to describe raindrop spectra: A tool for cloud physics and cloud remote sensing},
+  author={Testud, Jacques and Oury, St{\'e}phane and Black, Robert A and Amayenc, Paul and Dou, Xiankang},
+  journal={Journal of Applied Meteorology and Climatology},
+  volume={40},
+  number={6},
+  pages={1118--1140},
+  year={2001},
+  publisher={American Meteorological Society}
+}
+@article{bringi2003,
+  title={Raindrop size distribution in different climatic regimes from disdrometer and dual-polarized radar analysis},
+  author={Bringi, VN and Chandrasekar, V and Hubbert, J and Gorgucci, E and Randeu, WL and Schoenhuber, M},
+  journal={Journal of the atmospheric sciences},
+  volume={60},
+  number={2},
+  pages={354--365},
+  year={2003}
+}
+@article{hogan2017ssrga,
+  title={Calculating the millimetre-wave scattering phase function of snowflakes using the self-similar Rayleigh--Gans Approximation},
+  author={Hogan, Robin J and Honeyager, Ryan and Tyynel{\"a}, Jani and Kneifel, Stefan},
+  journal={Quarterly Journal of the Royal Meteorological Society},
+  volume={143},
+  number={703},
+  pages={834--844},
+  year={2017},
+  publisher={Wiley Online Library}
+}
+@article{hogan2008lidar_ms,
+  title={Fast lidar and radar multiple-scattering models. Part II: Wide-angle scattering using the time-dependent two-stream approximation},
+  author={Hogan, Robin J and Battaglia, Alessandro},
+  journal={Journal of the Atmospheric Sciences},
+  volume={65},
+  number={12},
+  pages={3636--3651},
+  year={2008},
+  publisher={American Meteorological Society}
+}
+@article{kummerow1993edd,
+  title={On the accuracy of the Eddington approximation for radiative transfer in the microwave frequencies},
+  author={Kummerow, Christian},
+  journal={Journal of Geophysical Research: Atmospheres},
+  volume={98},
+  number={D2},
+  pages={2757--2765},
+  year={1993},
+  publisher={Wiley Online Library}
+}
+
+@article{rosenkranz1998,
+  title={Water vapor microwave continuum absorption: A comparison of measurements and models},
+  author={Rosenkranz, Philip W},
+  journal={Radio Science},
+  volume={33},
+  number={4},
+  pages={919--928},
+  year={1998},
+  publisher={Wiley Online Library}
+}
+@article{joseph1976delta,
+  title={The delta-Eddington approximation for radiative flux transfer},
+  author={Joseph, J H\_ and Wiscombe, WJ and Weinman, JA},
+  journal={Journal of Atmospheric Sciences},
+  volume={33},
+  number={12},
+  pages={2452--2459},
+  year={1976}
+}
+
+@article{brogniez2022time,
+  title={Time-delayed tandem microwave observations of tropical deep convection: Overview of the C 2 OMODO mission},
+  author={Brogniez, H{\'e}l{\`e}ne and Roca, R{\'e}my and Auguste, Franck and Chaboureau, Jean-Pierre and Haddad, Ziad and Munchak, Stephen J and Li, Xiaowen and Bouniol, Dominique and D{\'e}p{\'e}e, Alexis and Fiolleau, Thomas and others},
+  journal={Frontiers in Remote Sensing},
+  volume={3},
+  pages={854735},
+  year={2022}
+}
+@article{grecu2011,
+  title={A robust dual-frequency radar profiling algorithm},
+  author={Grecu, Mircea and Tian, Lin and Olson, William S and Tanelli, Simone},
+  journal={Journal of applied meteorology and climatology},
+  volume={50},
+  number={7},
+  pages={1543--1557},
+  year={2011},
+  publisher={American Meteorological Society}
+}
+@article{liu1996three,
+  title={Three-dimensional radiative transfer effects of clouds in the microwave spectral range},
+  author={Liu, Quanhua and Simmer, Clemens and Ruprecht, Eberhard},
+  journal={Journal of Geophysical Research: Atmospheres},
+  volume={101},
+  number={D2},
+  pages={4289--4298},
+  year={1996},
+  publisher={Wiley Online Library}
+}
+
+@article{hogan2006retrieval,
+  title={The retrieval of ice water content from radar reflectivity factor and temperature and its use in evaluating a mesoscale model},
+  author={Hogan, Robin J and Mittermaier, Marion P and Illingworth, Anthony J},
+  journal={Journal of Applied Meteorology and Climatology},
+  volume={45},
+  number={2},
+  pages={301--317},
+  year={2006},
+  publisher={American Meteorological Society}
+}
+@article{delanoe2008variational,
+  title={A variational scheme for retrieving ice cloud properties from combined radar, lidar, and infrared radiometer},
+  author={Delano{\"e}, Julien and Hogan, Robin J},
+  journal={Journal of Geophysical Research: Atmospheres},
+  volume={113},
+  number={D7},
+  year={2008},
+  publisher={Wiley Online Library}
+}
+@article{deng2010tropical,
+  title={Tropical Composition, Cloud and Climate Coupling Experiment validation for cirrus cloud profiling retrieval using CloudSat radar and CALIPSO lidar},
+  author={Deng, Min and Mace, Gerald G and Wang, Zhien and Okamoto, Hajime},
+  journal={Journal of Geophysical Research: Atmospheres},
+  volume={115},
+  number={D10},
+  year={2010},
+  publisher={Wiley Online Library}
+}
+
+@article{deng2013evaluation,
+  title={Evaluation of several A-Train ice cloud retrieval products with in situ measurements collected during the SPARTICUS campaign},
+  author={Deng, Min and Mace, Gerald G and Wang, Zhien and Lawson, R Paul},
+  journal={Journal of applied meteorology and climatology},
+  volume={52},
+  number={4},
+  pages={1014--1030},
+  year={2013},
+  publisher={American Meteorological Society}
+}
+@article{brown1995improved,
+  title={Improved measurements of the ice water content in cirrus using a total-water probe},
+  author={Brown, Philip RA and Francis, Peter N},
+  journal={Journal of Atmospheric and Oceanic Technology},
+  volume={12},
+  number={2},
+  pages={410--414},
+  year={1995}
+}
+@article{heymsfield2022impacts,
+  title={Relationship of Multiwavelength Radar Measurements to Ice Microphysics from the IMPACTS Field Program},
+  author={Heymsfield, Andrew and Bansemer, Aaron and Heymsfield, Gerald and Noone, David and Grecu, Mircea and Toohey, Darin},
+  journal={Journal of Applied Meteorology and Climatology},
+  year={2022}
+}
+@software{scatter-1.1,
+  author = {Hogan,Robin J},
+  title = {scatter-1.1},
+  url = { http://www.met.reading.ac.uk/clouds/ssrga/scatter-1.1.tar.gz},
+  version = {1.1},
+  year = {2019},
+}
+
+@software{multiscatter-1.2.11,
+  author = {Hogan,Robin J},
+  title = {scatter-1.1},
+  url = { https://www.met.reading.ac.uk/clouds/multiscatter/multiscatter-1.2.11.tar.gz},
+  version = {1.2.11},
+  year = {2019},
+}
+@article{wagner_delene2022,
+  title={Technique for comparison of backscatter coefficients derived from in situ cloud probe measurements with concurrent airborne lidar},
+  author={Wagner, Shawn Wendell and Delene, David James},
+  journal={Atmospheric Measurement Techniques},
+  volume={15},
+  number={21},
+  pages={6447--6466},
+  year={2022},
+  publisher={Copernicus GmbH}
+}
+
+@article{bodas2011cosp,
+  title={COSP: Satellite simulation software for model assessment},
+  author={Bodas-Salcedo, Alejandro and Webb, MJ and Bony, S and Chepfer, H and Dufresne, J-L and Klein, SA and Zhang, Y and Marchand, R and Haynes, JM and Pincus, R and others},
+  journal={Bulletin of the American Meteorological Society},
+  volume={92},
+  number={8},
+  pages={1023--1043},
+  year={2011},
+  publisher={American Meteorological Society}
+}
+
+@article{pfreundschuh2020synergistic,
+  title={Synergistic radar and radiometer retrievals of ice hydrometeors},
+  author={Pfreundschuh, Simon and Eriksson, Patrick and Buehler, Stefan A and Brath, Manfred and Duncan, David and Larsson, Richard and Ekelund, Robin},
+  journal={Atmospheric Measurement Techniques},
+  volume={13},
+  number={8},
+  pages={4219--4245},
+  year={2020},
+  publisher={Copernicus GmbH}
+}
+
+@book{rodgers2000inverse,
+  title={Inverse methods for atmospheric sounding: theory and practice},
+  author={Rodgers, Clive D},
+  volume={2},
+  year={2000},
+  publisher={World scientific}
+}
+
+@article{liu2022assessing,
+  title={Assessing synergistic radar and radiometer capability in retrieving ice cloud microphysics based on hybrid Bayesian algorithms},
+  author={Liu, Yuli and Mace, Gerald G},
+  journal={Atmospheric Measurement Techniques},
+  volume={15},
+  number={4},
+  pages={927--944},
+  year={2022},
+  publisher={Copernicus GmbH}
+}
+
+
+@book{weitkamp2006,
+  title={Lidar: range-resolved optical remote sensing of the atmosphere},
+  author={Weitkamp, Claus},
+  volume={102},
+  year={2006},
+  publisher={Springer Science \& Business}
+}
+
+
+@article{mcmurdie2022,
+  title={Chasing snowstorms: The Investigation of Microphysics and Precipitation for Atlantic coast-threatening snowstorms (IMPACTS) campaign},
+  author={McMurdie, Lynn A and Heymsfield, Gerald M and Yorks, John E and Braun, Scott A and Skofronick-Jackson, Gail and Rauber, Robert M and Yuter, Sandra and Colle, Brian and McFarquhar, Greg M and Poellot, Michael and others},
+  journal={Bulletin of the American Meteorological Society},
+  volume={103},
+  number={5},
+  pages={E1243--E1269},
+  year={2022}
+}
+@article{yorks2022,
+title={ An Overview of the NASA Atmosphere Observing System Inclined Mission (AOS-I) and the Role of Backscatter Lidar},
+author={Yorks, John E and Braun, Scott A and Nowottnick, E and McGill, M and Schumacher, C and Wang, J and Follette-Cook, M and Campbell, James and Pavolonis, M}, 
+year={2022},
+journal={Proceeding of the 30th International Laser Radar Conference},
+}
+
+@article{braun2022,
+title={NASA'S Earth System Observatory-Atmosphere Observing System,},
+author={Braun, Scott and Yorks, John and Thorsen, T and Cecil D and Kirschbaum, D}, 
+year={2022},
+journal={IGARSS IEEE International Geoscience and Remote Sensing Symposium},
+}
+
+@article{ferreira2001,
+  title={Study and tests of improved rain estimates from the TRMM precipitation radar},
+  author={Ferreira, Franck and Amayenc, Paul and Oury, St{\'e}phane and Testud, Jacques},
+  journal={Journal of Applied Meteorology and Climatology},
+  volume={40},
+  number={11},
+  pages={1878--1899},
+  year={2001},
+  publisher={American Meteorological Society}
+}
+
+@article{delanoe2014,
+  title={Normalized particle size distribution for remote sensing application},
+  author={Delano{\"e}, JME and Heymsfield, Andrew J and Protat, Alain and Bansemer, Aaron and Hogan, RJ},
+  journal={Journal of Geophysical Research: Atmospheres},
+  volume={119},
+  number={7},
+  pages={4204--4227},
+  year={2014},
+  publisher={Wiley Online Library}
+}
+
+@book{nixon2019,
+  title={Feature extraction and image processing for computer vision},
+  author={Nixon, Mark and Aguado, Alberto},
+  year={2019},
+  publisher={Academic press}
+}
+@article{liu2006,
+  title={Estimating random errors due to shot noise in backscatter lidar observations},
+  author={Liu, Zhaoyan and Hunt, William and Vaughan, Mark and Hostetler, Chris and McGill, Matthew and Powell, Kathleen and Winker, David and Hu, Yongxiang},
+  journal={Applied optics},
+  volume={45},
+  number={18},
+  pages={4437--4447},
+  year={2006},
+  publisher={Optica Publishing Group}
+}
+@article{takahashi2008,
+  title={Characteristics of TRMM/PR system noise and their application to the rain detection algorithm},
+  author={Takahashi, Nobuhiro and Iguchi, Toshio},
+  journal={IEEE transactions on geoscience and remote sensing},
+  volume={46},
+  number={6},
+  pages={1697--1704},
+  year={2008},
+  publisher={IEEE}
+}
+@article{pauly2019,
+  title={Cloud-Aerosol Transport System (CATS) 1064 nm calibration<? xmltex$\backslash$break?> and validation},
+  author={Pauly, Rebecca M and Yorks, John E and Hlavka, Dennis L and McGill, Matthew J and Amiridis, Vassilis and Palm, Stephen P and Rodier, Sharon D and Vaughan, Mark A and Selmer, Patrick A and Kupchock, Andrew W and others},
+  journal={Atmospheric measurement techniques},
+  volume={12},
+  number={11},
+  pages={6241--6258},
+  year={2019},
+  publisher={Copernicus Publications G{\"o}ttingen, Germany}
+}
+
+@article{hogan2014,
+  title={Equation for the microwave backscatter cross section of aggregate snowflakes using the self-similar Rayleigh--Gans approximation},
+  author={Hogan, Robin J and Westbrook, Christopher D},
+  journal={Journal of the Atmospheric Sciences},
+  volume={71},
+  number={9},
+  pages={3292--3301},
+  year={2014},
+  publisher={American Meteorological Society}
+}
+
+@article{early2001image,
+  title={Image reconstruction and enhanced resolution imaging from irregular samples},
+  author={Early, David S and Long, David G},
+  journal={IEEE Transactions on Geoscience and Remote Sensing},
+  volume={39},
+  number={2},
+  pages={291--302},
+  year={2001},
+  publisher={IEEE}
+}
+@article{draper2015,
+  title={The global precipitation measurement (GPM) microwave imager (GMI): Instrument overview and early on-orbit performance},
+  author={Draper, David W and Newell, David A and Wentz, Frank J and Krimchansky, Sergey and Skofronick-Jackson, Gail M},
+  journal={IEEE Journal of Selected Topics in Applied Earth Observations and Remote Sensing},
+  volume={8},
+  number={7},
+  pages={3452--3462},
+  year={2015},
+  publisher={IEEE}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
