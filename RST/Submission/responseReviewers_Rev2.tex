@@ -1,0 +1,81 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage[margin=1in]{geometry}
+\author{Mircea Grecu and John E. Yorks}
+\title{Synergistic retrievals of ice in high clouds
+Response to Reviewers}
+\date{}
+\begin{document}
+\maketitle
+
+
+\noindent \textbf{Reviewer 2}
+
+\noindent \textbf{General Summary}
+
+\noindent\textit{ 
+For the sake of reproducibility, the authors should make all relevant source code publicly available. Furthermore, the data availability statement should clearly state which CloudSat products were used in the study.}\\
+
+\noindent\textit{l. 23 - 24: Considering that the study neglects substantial uncertainties that will affect the accuracy of an actual synergistic retrieval, the sentence should mention that the 'significant improvements' were found under idealized conditions.}\\
+
+\noindent Yes, we agree with the reviewer that the synergy was found under idealized conditions. We added a statement to this effect in the manuscript. Nevertheless, although additional work is likely needed to make optimal use of this synergy in practice, it is hard to envision how the tree instruments considered together cannot provide a more complete and quantitatively more accurate pictures than any one of them considered independently.\\
+
+\noindent\textit{l. 85: You state that you use the 2C-ICE product to extend your CS-based estimates. However, you do not explain how.} \\
+
+\noindent We apologize for the omission. When the CS-reflectivity is below the noise level, we use the IWC estimates in the 2C\-ICE product and $N_w$ derived by our statistical model. We added a sentence to the manuscript to clarify this point.\\
+
+\noindent\textit{l. 113: Please introduce the variable H as relative height above freezing level.}\\
+
+\noindent\textit{l. 125: I am confused by this paragraph. The preceding paragraph described how you parametrized $N_w$. However, $N_w$ still depends on $a_{norm}$, the calculation of which is described first in the following paragraph.}\\
+
+\noindent We apologize for the confusion. No, $N_w$ does not depend on $a_{norm}$. $a_{norm}$ derived by regressing $log_{10}(IWC/N_w)$ against $log_{10}(Z/_Nw)$ with $Z$ in natural units. The slope of the regression is $b$ in Eq. (1), while $a_{norm}$ is $10^{intercept}$ where $intercept$ is the intercept of the regression.  This is explained in Testud et al. (2001) and several other papers using the concept of normalized PSDs. \\
+
+\noindent\textit{l. 147: Here, you assume a fixed value for $N_w$. How is this consistent with the $N_w$ parametrization described earlier?}\\
+
+\noindent We apologize for the confusion. As explained above, $IWC$ and $Z$ are normalized by $N_w$ in the derivation of $a_{norm}$. Consequently, the actual value of $N_w$ does not matter. One may set $N_w$ to the unit value. However, that would result in very unusual $IWC$ and $Z$, which would make sanity checks impossible.  We therefore set $N_w$ to a frequently used, but arbitrary values. This however does not have any impact on the actual value of $N_w$.\\
+
+\noindent\textit{l. 258: How are absorption and extinction handled in your retrieval of IWC and PSD parameters from CS reflectivities?}\\
+
+The gaseous absorption is modeled using the Rosenkranz (1993) model assuming the same water vapor, temperature and pressure profiles used in the lidar model and the radiative transfer calculations. The extinction is computed using the SSRGA theory, while the attenuation correction is handled through a forward attenuation correction procedure.
+\\
+\noindent\textit{l. 276 - 278: While generally true, this does not apply to this study since the test data stems from the same distribution as the a priori in either case.}\\
+
+\noindent We just explain our preference for an observation-based dataset as opposed to a purely synthetic (CRM-based) dataset. However, we do not imply that our results are bias-free or that CRM can not eventually produce more complete and less-biased datasets. But until such datasets emerge, we consider the framework described .\\
+
+\noindent\textit{l. 291 - 292: Are you using a two-layer neural network without activations functions, or is this a typo? In the former case, I suggest you use a deeper neural network with non-linearities for the classification as you model may be underfitting the data.}\\
+
+\noindent We apologize for the confusion and omissions. The neural network has two hidden layers with ReLU activations. We considered additional layers and/or different numbers of neurons per layer, but the results did not improve. We added a sentence to the manuscript to clarify this point. \\
+
+\noindent\textit{l. 347: The new distribution of retrieved gravity centers cannot be described as narrow.}
+
+\noindent\textit{Section 3. b.: Please add results for the lidar-radar retrievals.}\\
+
+\noindent\textit{Table 2: Please include NRMS also for IWP and gravity centers. Since you mention it in the text, I suggest to also include the correlation coefficient in the table.}\\
+
+\noindent\textit{l. 440: The term cross-validation implies several iterations of evaluations. This is different from what you are doing here.}\\
+
+\noindent We agree with the reviewer that our particular form of validation, which more generally known as hold-out validation, is not considered cross-validation by some authors. Nevertheless, other authors (e.g. Arlot 2010) consider hold-out the most basic form of cross-validation. To avoid controversy, 
+we use term hold-out validation instead of cross-validation in the revised manuscript.\\
+
+
+
+
+
+
+\begin{thebibliography}{999}
+
+\bibitem{arlot2010survey}
+Arlot, S., A survey of cross-validation procedures for model selection. Statistics Surveys. 2010, 4, 40-79.
+
+
+\bibitem{ferreira2001}
+Ferreira, F., P. Amayenc, S. Oury, and J. Testud, 2001: Study and Tests of Improved Rain Estimates from the TRMM Precipitation Radar. 
+J. Appl. Meteor. Climatol., 40, 1878–1899, https://doi.org/10. 
+
+\end{thebibliography}
+
+\end{document}
