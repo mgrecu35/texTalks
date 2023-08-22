@@ -6,15 +6,14 @@
 \usepackage{longtable}
 \usepackage[margin=1in]{geometry}
 \author{Mircea Grecu and John E. Yorks}
-\title{Synergistic retrievals of ice in high clouds
-Response to Reviewers}
+\title{Synergistic retrievals of ice in high clouds\\
+Response to Reviewers\\Second Revision}
 \date{}
 \begin{document}
 \maketitle
 
 
-\noindent \textbf{Reviewer 2}
-
+\noindent \textbf{Reviewer 2}\\
 \noindent \textbf{General Summary}
 
 \noindent\textit{ 
@@ -22,13 +21,15 @@ For the sake of reproducibility, the authors should make all relevant source cod
 
 \noindent\textit{l. 23 - 24: Considering that the study neglects substantial uncertainties that will affect the accuracy of an actual synergistic retrieval, the sentence should mention that the 'significant improvements' were found under idealized conditions.}\\
 
-\noindent Yes, we agree with the reviewer that the synergy was found under idealized conditions. We added a statement to this effect in the manuscript. Nevertheless, although additional work is likely needed to make optimal use of this synergy in practice, it is hard to envision how the tree instruments considered together cannot provide a more complete and quantitatively more accurate pictures than any one of them considered independently.\\
+\noindent Yes, we agree with the reviewer that the synergy was found under idealized conditions. We added a statement to this effect in the manuscript. Nevertheless, although additional work is likely needed to make optimal use of this synergy in practice, it is hard to envision how the tree instruments considered together cannot provide a more complete and quantitatively more accurate picture than any one of them considered independently.\\
 
 \noindent\textit{l. 85: You state that you use the 2C-ICE product to extend your CS-based estimates. However, you do not explain how.} \\
 
-\noindent We apologize for the omission. When the CS-reflectivity is below the noise level, we use the IWC estimates in the 2C\-ICE product and $N_w$ derived by our statistical model. We added a sentence to the manuscript to clarify this point.\\
+\noindent We apologize for the omission. When the CS-reflectivity is below the noise level, we use the IWC estimates in the 2C\-ICE product in conjunction with an $N_w$ provided by our statistical model. We added a sentence to the manuscript to clarify this point.\\
 
 \noindent\textit{l. 113: Please introduce the variable H as relative height above freezing level.}\\
+
+Thank you for the suggestion. We introduced $H$ as the relative height above freezing level as suggested.\\
 
 \noindent\textit{l. 125: I am confused by this paragraph. The preceding paragraph described how you parametrized $N_w$. However, $N_w$ still depends on $a_{norm}$, the calculation of which is described first in the following paragraph.}\\
 
@@ -40,25 +41,29 @@ For the sake of reproducibility, the authors should make all relevant source cod
 
 \noindent\textit{l. 258: How are absorption and extinction handled in your retrieval of IWC and PSD parameters from CS reflectivities?}\\
 
-The gaseous absorption is modeled using the Rosenkranz (1993) model assuming the same water vapor, temperature and pressure profiles used in the lidar model and the radiative transfer calculations. The extinction is computed using the SSRGA theory, while the attenuation correction is handled through a forward attenuation correction procedure.
+\noindent The gaseous absorption is modeled using the Rosenkranz (1998) model assuming the same water vapor, temperature and pressure profiles used in the lidar model and the radiative transfer calculations. The extinction is computed using the SSRGA theory, while the attenuation correction is handled through a forward attenuation correction procedure.
 \\
 \noindent\textit{l. 276 - 278: While generally true, this does not apply to this study since the test data stems from the same distribution as the a priori in either case.}\\
 
-\noindent We just explain our preference for an observation-based dataset as opposed to a purely synthetic (CRM-based) dataset. However, we do not imply that our results are bias-free or that CRM can not eventually produce more complete and less-biased datasets. But until such datasets emerge, we consider the framework described .\\
+\noindent We just explain our preference for an observation-based dataset as opposed to a purely synthetic (CRM-based) dataset. However, we do not imply that our results are bias-free or that CRM can not eventually produce more complete and less-biased datasets. But until such datasets emerge, we consider the framework described.\\
 
 \noindent\textit{l. 291 - 292: Are you using a two-layer neural network without activations functions, or is this a typo? In the former case, I suggest you use a deeper neural network with non-linearities for the classification as you model may be underfitting the data.}\\
 
 \noindent We apologize for the confusion and omissions. The neural network has two hidden layers with ReLU activations. We considered additional layers and/or different numbers of neurons per layer, but the results did not improve. We added a sentence to the manuscript to clarify this point. \\
 
-\noindent\textit{l. 347: The new distribution of retrieved gravity centers cannot be described as narrow.}
+\noindent\textit{l. 347: The new distribution of retrieved gravity centers cannot be described as narrow.}\\
+
+\noindent We agree with the reviewer that the range of the retrieved gravity centers is not narrow. However, a significant fraction of retrieved IWC GC are within narrower range spanning from about 2.5 km above the freezing level to about 5.5 km above the freezing level. We added a sentence to the manuscript to clarify this point.\\
 
 \noindent\textit{Section 3. b.: Please add results for the lidar-radar retrievals.}\\
+
+\noindent Thank you for the suggestion. We added the results for the lidar-radar retrievals in the revised manuscript.\\
 
 \noindent\textit{Table 2: Please include NRMS also for IWP and gravity centers. Since you mention it in the text, I suggest to also include the correlation coefficient in the table.}\\
 
 \noindent\textit{l. 440: The term cross-validation implies several iterations of evaluations. This is different from what you are doing here.}\\
 
-\noindent We agree with the reviewer that our particular form of validation, which more generally known as hold-out validation, is not considered cross-validation by some authors. Nevertheless, other authors (e.g. Arlot 2010) consider hold-out the most basic form of cross-validation. To avoid controversy, 
+\noindent We agree with the reviewer that our particular form of validation, which is more generally known as hold-out validation, is not considered cross-validation by some authors. Nevertheless, other authors (e.g. Arlot 2010) consider hold-out the most basic form of cross-validation. To avoid controversy, 
 we use term hold-out validation instead of cross-validation in the revised manuscript.\\
 
 
