@@ -46,11 +46,40 @@ However, $AB$=$BC$=$AC$=$a$. Therefore, $B'C'=\frac{k^2}{a}$, $B'P'=BP\frac{k^2}
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{pompeiuTriangle.png}
+\includegraphics[width=0.75\textwidth]{pompeiuTriangle.png}
 \caption{A Pompeiu triangle}
 \label{fig:pompeiuTriangles1}
 \end{figure}
 
 To express the area of triangles $\Delta AB'P'$ as a function of $S(ABP)$, we can use $S(AB'P')=\frac {AB'\cdot AP' \cdot \sin(B'AP')}{2}$=
-$\frac{1}{2} \cdot \frac {k^2} {AB} \cdot \frac {k^2}{AP} \cdot \sin(BAP)$=$\frac {k^4} {AB^2 PA^2} \cdot \frac {AB \cdot AP \cdot \sin(BAP)} {2}$=$\frac {k^4}{a^2 PA^2} S(ABP)$. Similarly, $S(AP'C')=\frac {k^4}{a^2 PC^2} S(APC)$. 
+$\frac{1}{2} \cdot \frac {k^2} {AB} \cdot \frac {k^2}{AP} \cdot \sin(BAP)$=$\frac {k^4} {AB^2 PA^2} \cdot \frac {AB \cdot AP \cdot \sin(BAP)} {2}$=$\frac {k^4}{a^2 PA^2} S(ABP)$. Similarly, $S(AP'C')=\frac {k^4}{a^2 PA^2} S(APC)$. 
+
+As $S(P(PA,PB,PC))$ depends on $S(ABP)$, $S(APC)$, $S(ABC)$ and $MA$, it follows that a simple but general way of expressing $S(ABP)$, $S(APC)$, and $AP$ in terms of the side of the equilateral triangle $a$ and $MA$ needed.  This can be accomplished through elementary vector analysis (Weatherburn, 1926).
+
+\subsection{Elements of vector analysis}
+
+The theory of vectors was developed in the second half of the 18th in response to the need to rigorously and efficiently investigate problems in physics. As many physically properties such as forces, velocities, 3D displacements, etc. can be represented by vectors, cannot be described by single numbers (scalars), the theory of vectors was developed to provide a mathematical framework to study these properties. For example, a force cannot be described by a single number related to its magnitude because its direction is important as well. Similarly, position of a point relative to another cannot be described by the distance between them because the orientation relative to a given direction is a defining factor as well. However, the direction defined as value of an angle is not useful because it precludes the use of algebraic operations such as addition and subtraction. Therefore, instead of angular values, vectors rely on the concept of decomposition along two independent directions.  To describe the decomposition of a vector along two independent, we need to first define vectors and the addition of two vectors. In geometry, vectors are just directed segments.  For example, vector $\vec {AB}$ in Figure \ref{fig:vectors} is just segment $AB$ oriented from $A$ to $B$. The addition of two vectors is defined as the vector obtained by placing the second vector at the end of the first vector. For example, the sum of vectors $\vec {AF}$ and $\vec {FB}$ is vector $\vec {AC}$.  Equation 
+\begin{equation}
+\vec {AB}=\vec {AF} + \vec {FB}
+\label{eq:vectorAddition}
+\end{equation}
+is called the triangle law of addition and is true irrespective of where $F$ is located in the plane. However because $F$ is on line $d1$ and $FB$ is parallel to line $d2$, we can say that vectors $\vec{AF}$ and $\vec{FB}$ are the components of $\vec{AB}$ along directions $d1$ and $d2$.  The decomposition of a vector along two independent directions is unique.  This means that if we know the decomposition of a vector along two independent directions, we can determine the vector.  Note that a different vector, i.e. $\vec{AC}$ with same magnitude as $\vec{AB}$, but different direction, has different components on $d1$ and $d2$. In short, to define a vector, we need to specify its components along two independent (arbitrary but defined) directions.  The determination of a vector from its components and the inverse operation are trivial.
+
+In addition to decomposition and vector addition, another important operation is its multiplication by a scalar.  The multiplication of a vector by a scalar is defined as the vector obtained by multiplying the magnitude of the vector by the scalar and keeping the direction of the vector.  For example, the vector $2\vec{AB}$ is twice as long as $\vec{AB}$ and has the same direction.  If we multiply by a negative scalar, in addition to changing the magnitude of the vector, we also invert its direction. 
+
+An extremely important vector operation is the dot product between two vectors $\vec{a}$ and $\vec{b}$, defined as 
+\begin{equation}
+\vec{a}\cdot\vec{b}=|a||b|\cos(\theta)
+\label{eq:dotProduct}
+\end{equation}
+where $|a|$ and $|b|$ are the magnitudes of vectors $\vec{a}$ and $\vec{b}$ and $\theta$ is the angle between them.  While extremely important, the significance of the dot product is not immediately obvious. A major reason for the introduction of the dot product is its utility in deriving the components of a vector with respect to two new directions $d1_{new}$ and $d2_{new}$ from its components with respect to current directions $d1$ and $d2$.  Another benefit is in easily calculating distances, as it will be obvious in the article.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.75\textwidth]{Vectors.png}
+    \caption{Two vectors and their decompositions.}
+    \label{fig:vectors}
+    \end{figure}
+\section{Reference}
+Weatherburn, Charles Ernest. Elementary Vector Analysis: With application to geometry and physics. Bell and Sons, 1926.
 \end{document}
