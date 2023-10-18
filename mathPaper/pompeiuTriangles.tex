@@ -156,8 +156,48 @@ Benyi and Casu (2009) derived a formula similar Eq. \ref{eq:area5} also relying 
 \subsection{A remarkable property of Pompeiu triangles}
 In Andreescu et al. (2009), the reader is asked to find the geometric locus of points P that have the same areas. The original author of the problem is unknown, but the problem is believed to have been known for quite a while before it was published in the book. 
 
+Using Eq. (\ref{eq:centroid2}) and the equivalents for $\vec{BP}$ and $\vec{CP}$, after multiplication by $k_1$,$k_2$, and $k_3$ and summation, we obtain
+
+\begin{equation}
+k_1\vec{AP}+k_2\vec{BP}+k_3\vec{CP}=0
+\label{eq:psum}
+\end{equation}
+
+However, $\vec{AP}=\vec{AO}+\vec{OP}$, $\vec{BP}=\vec{BO}+\vec{OP}$ and $\vec{CP}=\vec{CO}+\vec{OP}.$, where $O$ is the center of the circumcircle of $\Delta ABC$. Therefore, Eq. (\ref{eq:psum}) can be rewritten as
+
+\begin{equation}
+k_1\vec{AO}+k_2\vec{BO}+k_3\vec{CO}=-(k_1+k_2+k_3)\vec{OP}
+\label{eq:psum2}
+\end{equation}
+
+Taking the dot product of Eq. (\ref{eq:psum2}) with itself, we obtain
+\begin{equation}
+\begin{split}
+k_1^2 AO^2+k_2^2 BO^2 +k_3^2 CO^2+\\
+2k_1k_2\vec{AO}\cdot\vec{BO}+2k_1k_3\vec{AO}\cdot\vec{CO}+2k_2k_3\vec{BO}\cdot\vec{CO}=\\
+(k_1+k_2+k_3)^2 OP^2
+\end{split}
+\label{eq:psum3}
+\end{equation}
+
+However, $AO=BO=CO=R$, where $R$ is the radius of the circumcircle of $\Delta ABC$, and 
+$\vec{AO}\cdot\vec{BO}=\vec{BO}\cdot\vec{CO}$=
+$\vec{CO}\cdot\vec{AO}=$
+$-\frac{1}{2}R^2$. Therefore, Eq. (\ref{eq:psum3}) can be rewritten as
+\begin{equation}
+OP^2=\frac{k_1^2+k_2^2+k_3^2}{(k_1+k_2+k_3)^2}R^2-\frac{k_1k_2+k_1k_3+k_2k_3}{(k_1+k_2+k_3)^2}R^2
+\label{eq:psum4}
+\end{equation}
+or
+\begin{equation}
+    OP^2=\left(1-3\frac{k_1k_2+k_1k_3+k_2k_3}{(k_1+k_2+k_3)^2}\right) R^2
+    \label{eq:psum5}
+\end{equation}
+Therefore if $S(P(PA,PB,PC))$ is constant, $\frac{k_1k_2+k_1k_3+k_2k_3}{(k_1+k_2+k_3)^2}$ is also constant. Consequently, $OP$ is constant.  This means that the locus of points $P$ with constant area is a circle centered at $O$ with radius $OP$.
+
 \section{Reference}
-Andreescu, T., Gelca, R. and Saul, M., 2009. Mathematical olympiad challenges (Vol. 216). Boston, MA: Birkhäuser.
-Bényi, Á. and Caşu, L., 2009. Pompeiu's Theorem Revisited. The College Mathematics Journal, 40(4), pp.252-258.
+
+Andreescu, T., Gelca, R. and Saul, M., 2009. Mathematical olympiad challenges (Vol. 216). Boston, MA: Birkhäuser.\\
+Bényi, Á. and Caşu, L., 2009. Pompeiu's Theorem Revisited. The College Mathematics Journal, 40(4), pp.252-258.\\
 Weatherburn, Charles Ernest. Elementary Vector Analysis: With application to geometry and physics. Bell and Sons, 1926.
 \end{document}
