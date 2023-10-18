@@ -32,6 +32,7 @@ Another property that we will use is that if $A'$ and $B'$ are the inverses of p
 \section{The area of a Pompeiu triangle}
 
 %% insert figure 1 here
+\subsection{Some preliminary results}
 For a given equilateral triangle $\Delta ABC$, we can apply an inversion with respect to a reference circle with center $A$ and radius $k$, and transform points $A$ and $B$ into point $A'$ and $B'$. A point $P$ interior to triangle $\Delta ABC$ is transformed into $P'$, which is exterior to triangle $\Delta AB'C'$. This is illustrated in Figure \ref{fig:pompeiuTriangles1}. It may be noticed in this figure that the area of $\Delta B'P'C'$ can be determined from the areas of triangles $\Delta AB'P'$, $\Delta AP'C'$ and $\Delta AB'C'$.  More specifically, if we denote the area of any given triangle $\Delta ABC$ by $S(ABC)$, then
 
 \begin{equation}
@@ -53,6 +54,13 @@ However, $AB$=$BC$=$AC$=$a$. Therefore, $B'C'=\frac{k^2}{a}$, $B'P'=BP\frac{k^2}
 
 To express the area of triangles $\Delta AB'P'$ as a function of $S(ABP)$, we can use $S(AB'P')=\frac {AB'\cdot AP' \cdot \sin(B'AP')}{2}$=
 $\frac{1}{2} \cdot \frac {k^2} {AB} \cdot \frac {k^2}{AP} \cdot \sin(BAP)$=$\frac {k^4} {AB^2 PA^2} \cdot \frac {AB \cdot AP \cdot \sin(BAP)} {2}$=$\frac {k^4}{a^2 PA^2} S(ABP)$. Similarly, $S(AP'C')=\frac {k^4}{a^2 PA^2} S(APC)$. 
+
+On the other hand, $S(AB'C')=\frac {k^4}{a^4}S(ABC)$.  Therefore,
+
+\begin{equation}
+    S(P(PA,PB,PC))=S(ABP)+ S(APC)-\frac{PA^2}{a^2}S(ABC)
+    \label{eq:area2}
+\end{equation}
 
 As $S(P(PA,PB,PC))$ depends on $S(ABP)$, $S(APC)$, $S(ABC)$ and $MA$, it follows that a simple but general way of expressing $S(ABP)$, $S(APC)$, and $AP$ in terms of the side of the equilateral triangle $a$ and $MA$ needed.  This can be accomplished through elementary vector analysis (Weatherburn, 1926).
 
@@ -80,6 +88,76 @@ where $|a|$ and $|b|$ are the magnitudes of vectors $\vec{a}$ and $\vec{b}$ and 
     \caption{Two vectors and their decompositions.}
     \label{fig:vectors}
     \end{figure}
+
+Although not directly used in this article the cross product between two vectors $\vec{a}$ and $\vec{b}$ is also important. We mention it here without a definition.
+
+A concept that is used in the article to derive various formula used in the simplification of Equation \ref{eq:area2} is that of centroid. The centroid of a system of points $P_1$, $P_2$, ..., $P_n$ associated with masses $m_1$, $m_2$, ..., $m_n$ is the point $G$ defined by the equation
+\begin{equation}
+\vec{OG}=\frac{1}{\sum_{i=1}^n m_i}\sum_{i=1}^{n}m_i\vec{OP_i}
+\label{eq:centroid}
+\end{equation}
+where $G$ is the centroid location and $O$ is the origin of the coordinate system.
+
+It can be proven that the location of $G$ does not depend on that of $O$ (Weatherburn, 1926).
+
+\subsection{Some useful formulas}
+Consider an arbitrary triangle $ABC$ to which we attach masses $k_1$, $k_2$ and $k_3$. According to Eq. \ref{eq:centroid} when the origin is point $A$, the centroid of the system consistent of masses $k_2$ and $k_3$ is
+
+\begin{equation}
+\vec{AD}=\frac{1}{k_2+k_3}(k_2\vec{AB}+k_3\vec{AC})
+\end{equation}
+If we denote the centroid of the system of masses $k_1$, $k_2$ and $k_3$ by $P$, then
+
+\begin{equation}
+\vec{AP}=\frac{1}{k_1+k_2+k_3}(k_2\vec{AB}+k_3\vec{AC})
+\label{eq:centroid2}
+\end{equation}
+Note that $\vec{AP}$ and $\vec{AD}$ are both proportional to $k_2 \vec{AB}+ k_3\vec{AC}$.  They have the same origin and same direction, but they have different magnitudes (on lengths). The ratio of their magnitudes is $\frac{k_1+k_2+k_3}{k_2+k_3}$.  Therefore, $P$ is located on $AD$ at a distance $\frac{k_2+k_3}{k_1+k_2+k_3} AD$ from $A$.  Moreover, $P$ is located at a distance of $\frac{k_1}{k_1+k_2+k_3} AD$ from $D$. It follows that the area of triangle $\Delta BPC$ is $\frac{k_1}{k_1+k_2+k_3} S(ABC)$. Similarly, the area of triangle $\Delta APC$ is $\frac{k_2}{k_1+k_2+k_3} S(ABC)$ and the area of triangle $\Delta APB$ is $\frac{k_3}{k_1+k_2+k_3} S(ABC)$.  
+
+The converse is also true. That is, given a point $P$ in the interior of a triangle, there are masses $k_1$, $k_2$, $k_3$ that can be attached to points $A$, $B$, $C$ such that the centroid of the system is $P$.  The masses are given by $k_1=\frac{S(BPC)}{S(ABC)}$, $k_2=\frac{S(APC)}{S(ABC)}$ and $k_3=\frac{S(APB)}{S(ABC)}$.
+
+\subsection{Derivation of the formula for the area of a Pompeiu triangle}
+Equation \ref{eq:area2} can be then rewritten as
+
+\begin{equation}
+S(P(PA,PB,PC))=S(ABC)\left(\frac{k_2+k_3}{k_1+k_2+k_3}-\frac{PA^2}{a^2}\right)
+\label{eq:area3}
+\end{equation}
+
+To further simplify Eq. \ref{eq:area3}, we can calculate the dot product of $\vec{AP}$ with itself.  This is given by
+\begin{equation}
+\vec{AP}\cdot\vec{AP}=\frac{1}{(k_1+k_2+k_3)^2}(k_2\vec{AB}+k_3\vec{AC})\cdot(k_2\vec{AB}+k_3\vec{AC})
+\label{eq:dotProduct2}
+\end{equation}
+Expanding the dot product in Eq. \ref{eq:dotProduct2} and using the fact that $\vec{AB}\cdot\vec{AB}=a^2$, $\vec{AC}\cdot\vec{AC}=a^2$ and $\vec{AB}\cdot\vec{AC}=\frac{a^2}{2}$, we obtain
+\begin{equation}
+AP^2=\frac{1}{(k_1+k_2+k_3)^2}(k_2^2a^2+k_3^2a^2+k_2k_3a^2)
+\label{eq:dotProduct3}
+\end{equation}
+\begin{figure}
+\centering
+\includegraphics[width=0.75\textwidth]{centroid.png}
+\caption{An arbitrary triangle $ABC$ with masses $k_1$, $k_2$, $k_3$ attached at points $A$, $B$, $C$.}
+\label{fig:centroid}
+\end{figure}
+
+Therefore, Eq. \ref{eq:area3} can be rewritten as
+\begin{equation}
+S(P(PA,PB,PC))=S(ABC)\left(\frac{k_2+k_3}{k_1+k_2+k_3}-\frac{k_2^2+k_3^2+k_2k_3}{(k_1+k_2+k_3)^2}\right)
+\label{eq:area4}
+\end{equation}
+or
+\begin{equation}
+S(P(PA,PB,PC))=S(ABC)\left(\frac{k_1k_2+k_1k_3+k_2k_3}{(k_1+k_2+k_3)^2}\right)
+\label{eq:area5}
+\end{equation}
+Benyi and Casu (2009) derived a formula similar Eq. \ref{eq:area5} also relying on inversions. However, they do not use vector geometry and the steps from Eq. \ref{eq:area2} to the final form are significantly more algebraic in nature. Moreover, the algebraic steps are not as intuitive as the vector geometry steps presented here and do not enable the derivation of the formula for the distance of point $P$ to the circumcircle of $ABC$.
+
+\subsection{A remarkable property of Pompeiu triangles}
+In Andreescu et al. (2009), the reader is asked to find the geometric locus of points P that have the same areas. The original author of the problem is unknown, but the problem is believed to have been known for quite a while before it was published in the book. 
+
 \section{Reference}
+Andreescu, T., Gelca, R. and Saul, M., 2009. Mathematical olympiad challenges (Vol. 216). Boston, MA: Birkhäuser.
+Bényi, Á. and Caşu, L., 2009. Pompeiu's Theorem Revisited. The College Mathematics Journal, 40(4), pp.252-258.
 Weatherburn, Charles Ernest. Elementary Vector Analysis: With application to geometry and physics. Bell and Sons, 1926.
 \end{document}
