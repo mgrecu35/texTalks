@@ -1,0 +1,63 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{longtable}
+\usepackage[margin=1in]{geometry}
+\author{Mircea Grecu and John E. Yorks}
+\title{Synergistic retrievals of ice in high clouds\\
+Response to Reviewers\\Second Revision}
+\date{}
+\begin{document}
+\maketitle
+
+\noindent \textbf{Reviewer 1}\\
+
+\noindent\textit{The authors should state which version of the 2C-ICE and 2B-GEOPROF products they are using (R05?). Other than that, I think this is a good paper that is 
+ready for publication.}\\
+
+\noindent We thank the reviewer for the positive feedback. We added a sentence to the manuscript to clarify that we use the R05 version of the 2C-ICE and 2B-GEOPROF products.\\
+
+\noindent \textbf{Reviewer 2}\\
+
+\noindent\textit{Although I would prefer not to drag out this review process even longer, I feel that the authors failed to adequately address some of my previous comments. Most importantly, the published code does not contain the retrieval you describe in your paper. The repository only includes a retrieval based on a similarity search, which yields better results than the results presented in the manuscript. If these results are representative, they do put much of the presented results into question. I, therefore, suggest the authors provide the actual code used to produce the results presented in the manuscript instead.}\\
+
+\noindent We thank the reviewer for the perspective.\\
+
+\noindent \textbf{Other comments:}\\
+
+\noindent\textit{\textbf{1.}Please note that the sentence above clearly states that $N_w$ depends on $a_{norm}$. I do understand that, in general, $N_w$ does not depend on $a_{norm}$. In your study, however, you are trying to infer both $N_w$ and $a_{norm}$ from the Z-IWC relationship in CS 2C-ICE. You describe how you use these values to derive the variation of $ln(a)$ and b, but that is still insufficient to determine $N_w$ and its altitude variation. Please provide the final parametrization of $N_w$ that you use in your simulations --prior to perturbing $N_w$ -- and how you calculated it. Currently, the manuscript only states that you calculate  Z for a fixed $N_w$, but it is unclear how you use that to determine $a_{norm}$.}\\
+
+\noindent We are sorry about the confusion. Parameter $a_{norm}$ is derived using analytical normalized gamma distributions with $N_w$=0.08cm$^{-4}$. The use of analytical distributions in the derivation of the scattering lookup tables is already explained in the manuscript, but their relevance to $a_{norm}$ is insufficiently described. We added a few sentences to the manuscript to clarify this point.  Specifically, given that normalized particle size distributions are functions of type $N(D)=N_w\cdot F(D/D_m)$, normalization by $N_w$ transforms the relation between normalized $IWC$ and $Z$ to a relation between $IWC_{norm}=\int_0^{\infty} F(D/D_m)m(D)dD$ and $Z_{norm}=\frac {\lambda ^4} {\pi ^5 |K_w|^2} \int_0^{\infty} F(D/D_m) \sigma_b(D) dD$, where $m(D)$ and $\sigma_b(D)$ are the mass and electromagnetic backscattering cross-section of particles of mass $D$. As apparent in the above integrals, there is no $N_w$ dependence in the relations between normalized variables. A relationship of the type $IWC_{norm}=a_{norm}Z_{norm}^b$ becomes $IWC/N_w=a_{norm}(Z/N_w)^b$ for a PSD with a scaling intercept of $N_w$, or $IWC=a_{norm}N_w^{1-b}Z^b$. The values associated with our scattering lookup tables are $a_{norm}$ $\approx$0.985 and b$\approx$0.64, which result in parameterization $log_{10}(N_w)=8.87+0.161H$.\\
+
+
+\noindent\textit{\textbf{2.}
+$>$ l. 347: The new distribution of retrieved gravity centers cannot be described as narrow.\\
+You did not change anything in the manuscript.}\\
+
+\noindent We apologize for the omission. We certainly intended to, but did not keep proper track of all changes meant to be included in the submission. We added a sentence to the manuscript to clarify this point.\\
+
+\noindent\textit{Minor mistakes:\\
+l. 94: Formatting of reference\\
+l. 108: Space after full stop.\\
+l. 121: Spelling mistake\\
+l. 361: There $\->$ The\\
+l. 441: 'Of' repeated\\
+l. 462: Is $\->$ are.} \\
+
+\noindent We thank the reviewer for pointing out these issues. We addressed them in the new version of the manuscript. It should be mentioned though that reference formatting is determined by the Latex compiler at submission time and some formatting aspects are not under the author's control.\\
+
+
+\begin{thebibliography}{999}
+
+\bibitem{arlot2010survey}
+Arlot, S., A survey of cross-validation procedures for model selection. Statistics Surveys. 2010, 4, 40-79.
+
+
+%\bibitem{ferreira2001}
+%Ferreira, F., P. Amayenc, S. Oury, and J. Testud, 2001: Study and Tests of Improved Rain Estimates from the TRMM Precipitation Radar. J. Appl. Meteor. Climatol., 40, 1878–1899, https://doi.org/10. 
+
+\end{thebibliography}
+
+\end{document}
